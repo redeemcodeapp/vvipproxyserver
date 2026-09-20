@@ -1,331 +1,1562 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Garena Free Fire Team - Video Portal</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #2d2d2d;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #fff;
-      min-height: 100vh;
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #87CEEB, #5FB9E0);
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Video Section */
-    .video-section {
-      margin: 30px 0;
-      text-align: center;
-    }
-
-    .video-section h2 {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-
-    .video-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      background: #1a1a1a;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      position: relative;
-    }
-
-    .video-container video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* App Card */
-    .app-card {
-      width: 95%;
-      max-width: 520px;
-      margin: 50px auto;
-      padding: 20px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #141414, #0b0b0b);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
-      position: relative;
-    }
-
-    .app-card::before {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: 18px;
-      padding: 3px;
-      background: linear-gradient(
-        90deg,
-        #ff0000,
-        #ff7f00,
-        #ffff00,
-        #00ff00,
-        #00ffff,
-        #0000ff,
-        #8b00ff
-      );
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      z-index: -1;
-    }
-
-    .app-info {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .app-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 14px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .text {
-      flex: 1;
-    }
-
-    .tags {
-      margin-bottom: 6px;
-      display: flex;
-      gap: 6px;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-weight: 600;
-      display: inline-block;
-    }
-
-    .tag.new {
-      background: #ff3b3b;
-      color: #fff;
-    }
-
-    .tag.premium {
-      background: #6a5cff;
-      color: #fff;
-    }
-
-    .text h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin: 6px 0;
-      color: #fff;
-    }
-
-    .text p {
-      font-size: 13px;
-      color: #bdbdbd;
-      line-height: 1.5;
-      margin: 4px 0;
-    }
-
-    .stars {
-      color: #ffcc00;
-      font-size: 16px;
-      margin-top: 6px;
-    }
-
-    /* Install Button */
-    .install-btn {
-      width: 100%;
-      margin-top: 20px;
-      padding: 16px;
-      border: none;
-      border-radius: 35px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(90deg, #00ff88, #00cc6a);
-      box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-    }
-
-    .install-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 255, 136, 0.6);
-    }
-
-    .install-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 22px;
-      }
-
-      .video-section h2 {
-        font-size: 20px;
-      }
-
-      .app-icon {
-        width: 64px;
-        height: 64px;
-      }
-
-      .text h3 {
-        font-size: 18px;
-      }
-
-      .text p {
-        font-size: 12px;
-      }
-
-      .install-btn {
-        font-size: 16px;
-        padding: 14px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <h1>Garena Free Fire Team</h1>
-  </header>
-
-  <!-- Main Container -->
-  <div class="container">
-    
-    <!-- Video Section -->
-    <div class="video-section">
-      <h2>WATCH FULL VIDEO</h2>
-      <div class="video-container">
-        <video 
-          controls 
-          controlsList="nodownload noremoteplayback"
-          disablePictureInPicture
-          oncontextmenu="return false;"
-          id="protectedVideo"
-          preload="auto"
-          playsinline
-          autoplay
-        >
-          <source src="https://www.image2url.com/r2/default/videos/1789889798863-b164bc8e-e925-4b17-b2f4-fd6c9117ddc7.mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-
-    <!-- App Card -->
-    <div class="app-card">
-      <div class="app-info">
-        <img src="https://www.image2url.com/r2/default/images/1787584630957-2a2f9988-cb5a-4eac-9e31-12e52329c4a7.jpg" alt="App Icon" class="app-icon">
-        <div class="text">
-          <div class="tags">
-            <span class="tag new">NEW</span>
-            <span class="tag premium">PREMIUM</span>
-          </div>
-          <h3>PROXY SERVER</h3>
-          <p>FREE FIRE PROXY SERVER UNLIMITED ACCESS</p>
-          <div class="stars">★★★★★</div>
-        </div>
-      </div>
-      <a href="https://freefiresecrets.boocnd.site?key=tlksff90" target="_blank" class="install-btn">⬇ Install</a>
-    </div>
-
-  </div>
-
-  <script>
-    // Disable right-click
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-    // Disable keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-      if (e.keyCode == 123 || 
-          (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
-          (e.ctrlKey && e.shiftKey && e.keyCode == 74) ||
-          (e.ctrlKey && e.keyCode == 85) ||
-          (e.ctrlKey && e.keyCode == 83)) {
-        e.preventDefault();
-      }
-    });
-
-    const video = document.getElementById('protectedVideo');
-    
-    if (video) {
-      // Set volume to maximum
-      video.volume = 1.0;
-      
-      // Prevent right-click and drag on video
-      video.addEventListener('contextmenu', (e) => e.preventDefault());
-      video.addEventListener('dragstart', (e) => e.preventDefault());
-      
-      // Simple autoplay on page load
-      let playAttempted = false;
-      
-      const attemptPlay = () => {
-        if (!playAttempted) {
-          playAttempted = true;
-          video.play().catch(() => {
-            // If autoplay fails, play on first user click
-            document.addEventListener('click', function playOnClick() {
-              video.play();
-              document.removeEventListener('click', playOnClick);
-            }, { once: true });
-          });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="monetag" content="40468b9e49746967575b38c0fdbd8e6a">
+    <title>Garena Free Fire Team - Video Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --black: #071018;
+            --surface: #0c1822;
+            --panel: #12202c;
+            --line: rgba(56, 189, 248, 0.16);
+            --red: #38bdf8;
+            --red-bright: #7dd3fc;
+            --red-dim: rgba(56, 189, 248, 0.22);
+            --green: #fbbf24;
+            --gold: #fde68a;
+            --white: #f0f9ff;
+            --grey: #94a3b8;
+            --mono: 'JetBrains Mono', monospace;
+            --display: 'Bebas Neue', sans-serif;
+            --body: 'DM Sans', sans-serif;
         }
-      };
-      
-      // Attempt to play when video is ready
-      if (video.readyState >= 3) {
-        attemptPlay();
-      } else {
-        video.addEventListener('canplay', attemptPlay, { once: true });
-      }
-    }
-  </script>
 
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"5cab18d3087d475d92682bad459238d3","r":1}' crossorigin="anonymous"></script>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(1200px 560px at 8% -12%, rgba(56, 189, 248, 0.22), transparent 55%),
+                radial-gradient(900px 480px at 108% 4%, rgba(251, 191, 36, 0.14), transparent 52%),
+                var(--black);
+            font-family: var(--body);
+            color: var(--white);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: env(safe-area-inset-bottom);
+            overflow-x: hidden;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(56, 189, 248, 0.03) 2px,
+                    rgba(56, 189, 248, 0.03) 4px);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* TICKER */
+        .ticker-track {
+            display: flex;
+            gap: 50px;
+            animation: ticker 42s linear infinite;
+            white-space: nowrap;
+            width: max-content;
+        }
+
+        .ticker-track span {
+            font-family: var(--display);
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #fff;
+            text-transform: uppercase;
+            opacity: 0.95;
+        }
+
+        @keyframes ticker {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* LAYOUT */
+        .page {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 12px 24px 60px;
+        }
+
+        /* BLOCK HEADER */
+        .block-header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .block-num {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--red);
+            letter-spacing: 1px;
+        }
+
+        .block-rule {
+            height: 1px;
+            background: var(--line);
+        }
+
+        .block-title {
+            font-family: var(--display);
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: var(--grey);
+            text-transform: uppercase;
+        }
+
+        /* VIDEO */
+        .video-block {
+            margin-bottom: 38px;
+        }
+
+        .video-block.reveal {
+            transform: none;
+            animation: fadein 0.5s ease forwards;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .video-frame {
+            position: relative;
+            overflow: hidden;
+            background: #000;
+            aspect-ratio: 16 / 9;
+            border-top: 3px solid var(--red);
+            border-left: 1px solid var(--line);
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .frame-corner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .frame-corner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--red);
+        }
+
+        .frame-corner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 40px;
+            background: var(--red);
+        }
+
+        .frame-corner-br {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .frame-corner-br::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 1px;
+            background: rgba(56, 189, 248, 0.4);
+        }
+
+        .frame-corner-br::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            height: 40px;
+            background: rgba(56, 189, 248, 0.4);
+        }
+
+        .video-frame video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background: #000;
+        }
+
+        .video-frame video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            inset: 0;
+            z-index: 6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(8, 8, 10, 0.45);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .video-play-btn.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .video-play-btn .play-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--red), var(--green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.45);
+        }
+
+        .video-play-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+            margin-left: 3px;
+        }
+
+        .yt-wrapper {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        .yt-wrapper iframe {
+            position: absolute;
+            top: -60px;
+            left: 0;
+            width: 100%;
+            height: calc(100% + 120px);
+            border: none;
+        }
+
+        .video-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(125, 211, 252, 0.45);
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            color: var(--white);
+            text-transform: uppercase;
+            z-index: 5;
+        }
+
+        .video-badge .live-dot {
+            width: 6px;
+            height: 6px;
+        }
+
+        .video-index {
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: rgba(147, 197, 253, 0.45);
+            pointer-events: none;
+            z-index: 4;
+            text-transform: uppercase;
+        }
+
+        /* APP CARD */
+        .card-wrap {
+            margin-top: 0;
+        }
+
+        .card-header-row {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 0;
+        }
+
+        .app-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-top: none;
+            border-left: 3px solid var(--green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 240px;
+            height: 240px;
+            background: var(--red-dim);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        .card-icon-col {
+            padding: 28px 24px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid var(--line);
+            position: relative;
+            z-index: 2;
+        }
+
+        .app-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            object-fit: cover;
+            display: block;
+            filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+            border: 2px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .icon-rating-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .icon-rating {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+        }
+
+        .icon-rating svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--gold);
+        }
+
+        .rating-num {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--white);
+            margin-left: 5px;
+            font-weight: 700;
+        }
+
+        .card-info-col {
+            padding: 28px 28px 28px 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .verified-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .verified-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border: 1px solid rgba(251, 191, 36, 0.45);
+            background: rgba(251, 191, 36, 0.12);
+            color: var(--green);
+        }
+
+        .verified-tag svg {
+            width: 10px;
+            height: 10px;
+            fill: var(--green);
+        }
+
+        .app-title {
+            font-family: var(--display);
+            font-size: 38px;
+            letter-spacing: 3px;
+            line-height: 0.95;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .app-desc {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--grey);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .card-stats {
+            display: flex;
+            gap: 24px;
+            padding: 14px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 22px;
+        }
+
+        .cstat-val {
+            font-family: var(--display);
+            font-size: 22px;
+            letter-spacing: 1px;
+            color: var(--white);
+            display: block;
+            line-height: 1;
+        }
+
+        .cstat-val.accent {
+            color: var(--red-bright);
+        }
+
+        .cstat-key {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: var(--grey);
+            text-transform: uppercase;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* INSTALL BUTTON (BASE) */
+        .install-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 17px 30px;
+            background: linear-gradient(90deg, var(--red), var(--green));
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--display);
+            font-size: 22px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            align-self: stretch;
+            box-shadow: 0 6px 24px rgba(56, 189, 248, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: btn-pulse 2.2s ease-in-out infinite;
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        @keyframes btn-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 24px rgba(56, 189, 248, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(251, 191, 36, 0.45);
+            }
+
+            50% {
+                box-shadow: 0 6px 28px rgba(251, 191, 36, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 8px rgba(56, 189, 248, 0);
+            }
+        }
+
+        .install-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+
+            0%,
+            100% {
+                left: -100%;
+            }
+
+            50% {
+                left: 100%;
+            }
+        }
+
+        .install-btn:hover {
+            background: linear-gradient(90deg, var(--red-bright), var(--green));
+        }
+
+        .install-btn:active {
+            transform: scale(0.98);
+        }
+
+        .install-btn span,
+        .install-btn svg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .install-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transform: translateY(0px);
+            animation: none;
+        }
+
+        /* SHARE BUTTON */
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: var(--white);
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+            animation: share-pulse 2.6s ease-in-out infinite;
+            transition: background 0.2s, border-color 0.2s, transform 0.1s;
+            transform: translateX(10px);
+        }
+
+        @keyframes share-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.12), 0 2px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 0 5px rgba(255, 255, 255, 0), 0 2px 16px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .share-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+            animation: share-shine 3s ease-in-out infinite;
+        }
+
+        @keyframes share-shine {
+
+            0%,
+            100% {
+                left: -100%;
+            }
+
+            50% {
+                left: 100%;
+            }
+        }
+
+        .share-btn svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .share-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .share-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translate(10px, -1px);
+        }
+
+        .share-btn:active {
+            transform: scale(0.97);
+        }
+
+        .share-btn.copied {
+            border-color: rgba(251, 191, 36, 0.5);
+            color: var(--green);
+            background: rgba(251, 191, 36, 0.12);
+            animation: none;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+        }
+
+        /* TRUST ROW */
+        .trust-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 8px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            text-align: center;
+        }
+
+        .trust-item svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--red-bright);
+        }
+
+        .trust-item-text {
+            font-family: var(--mono);
+            font-size: 9px;
+            color: var(--grey);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .trust-item-text strong {
+            color: var(--white);
+            display: block;
+            font-size: 10px;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 30px 24px 24px;
+            text-align: center;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer p {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--grey);
+            text-transform: uppercase;
+        }
+
+        /* ENTRY ANIMS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: reveal 0.5s ease forwards;
+        }
+
+        .r1 {
+            animation-delay: 0.05s;
+        }
+
+        .r2 {
+            animation-delay: 0.18s;
+        }
+
+        .r3 {
+            animation-delay: 0.30s;
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE - MOBILE OPTIMIZED */
+        @media (max-width: 600px) {
+            .ticker-track span {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .page {
+                padding: 10px 12px 40px;
+            }
+
+            .video-block {
+                margin-bottom: 28px;
+            }
+
+            .block-header {
+                margin-bottom: 14px;
+            }
+
+            .block-title {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .app-card {
+                grid-template-columns: 1fr;
+            }
+
+            .card-icon-col {
+                flex-direction: row;
+                gap: 16px;
+                padding: 18px;
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .icon-rating-row {
+                margin-top: 0;
+                flex-wrap: wrap;
+            }
+
+            .card-info-col {
+                padding: 20px 18px;
+            }
+
+            .app-title {
+                font-size: 26px;
+            }
+
+            .card-stats {
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+
+            .cstat-val {
+                font-size: 18px;
+            }
+
+            .install-btn {
+                font-size: 18px;
+                width: 100%;
+                padding: 16px;
+                letter-spacing: 2.5px;
+            }
+
+            .trust-row {
+                gap: 8px;
+                margin-top: 14px;
+            }
+
+            .trust-item {
+                padding: 12px 6px;
+            }
+
+            .trust-item-text {
+                font-size: 8px;
+            }
+
+            .trust-item-text strong {
+                font-size: 9px;
+            }
+
+            .footer {
+                padding: 24px 14px 18px;
+            }
+        }
+
+        /* CAPTION */
+        .card-caption {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 14px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-left: 3px solid rgba(56, 189, 248, 0.45);
+            border-top: none;
+            gap: 12px;
+        }
+
+        .caption-text {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: var(--grey);
+            text-transform: uppercase;
+        }
+
+        .caption-text strong {
+            color: var(--white);
+        }
+
+        .icon-rating svg {
+            margin-right: 6px;
+            transform: scale(2);
+        }
+
+        .live-comments {
+            margin: 0;
+            padding: 14px 16px 16px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-top: none;
+        }
+
+        .live-comments-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .live-comments-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--body);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .live-dot-chat {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--red-bright);
+            flex-shrink: 0;
+            animation: blink-dot 0.8s ease-in-out infinite;
+        }
+
+        @keyframes blink-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .live-comments-count {
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--grey);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .comments-feed {
+            max-height: 200px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-right: 4px;
+            scroll-behavior: smooth;
+        }
+
+        .comments-feed::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .comments-feed::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 3px;
+        }
+
+        .cmt {
+            display: flex;
+            gap: 8px;
+            animation: cmtIn 0.25s ease;
+        }
+
+        @keyframes cmtIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cmt-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--body);
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .cmt-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cmt-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 2px;
+        }
+
+        .cmt-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .cmt-time {
+            font-size: 10px;
+            color: var(--grey);
+        }
+
+        .cmt-text {
+            font-size: 12px;
+            color: #bae6fd;
+            line-height: 1.35;
+            word-break: break-word;
+        }
+
+        @media (max-width: 600px) {
+            .live-comments {
+                padding: 12px;
+            }
+
+            .comments-feed {
+                max-height: 160px;
+            }
+
+            .cmt-avatar {
+                width: 26px;
+                height: 26px;
+                font-size: 11px;
+            }
+
+            .cmt-name,
+            .cmt-text {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- Video -->
+        <div class="video-block reveal r1">
+            <div class="block-header">
+                <span class="block-num">01</span>
+                <div class="block-rule">
+                </div>
+                <span class="block-title">Watch Full Video</span>
+            </div>
+            <div class="video-frame">
+                <div class="frame-corner">
+                </div>
+                <div class="frame-corner-br">
+                </div>
+                <video controlslist="nodownload noremoteplayback" disablepictureinpicture
+                    oncontextmenu="return false;" id="protectedVideo" preload="metadata" playsinline webkit-playsinline>
+                    <source
+                        src="https://www.image2url.com/r2/default/videos/1789889798863-b164bc8e-e925-4b17-b2f4-fd6c9117ddc7.mp4"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button type="button" class="video-play-btn" id="videoPlayBtn" aria-label="Play video">
+                    <span class="play-circle">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                </button>
+                <div class="video-index">FF &bull; VDO &bull; 2026</div>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="card-wrap reveal r2">
+            <div class="card-header-row">
+                <div class="ticker-track"
+                    style="border-top: 1px solid rgba(255, 255, 255, 0.209); border-bottom: 1px solid rgba(255, 255, 255, 0.209); padding: 4px 0px;">
+                    <span>Aarav — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Vivaan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Aditya — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Arjun — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Krishna — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Ishaan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Rohan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Karan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Rahul — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Mohit — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Yash — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Aman — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Deepak — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Sumit — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Ankit — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Manish — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Ritesh — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Vikas — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Abhishek — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Neeraj — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Aarav — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Vivaan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Aditya — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Arjun — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Krishna — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Ishaan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Rohan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Karan — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Rahul — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Mohit — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Yash — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Aman — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Deepak — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Sumit — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Ankit — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Manish — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Ritesh — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Vikas — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Abhishek — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                    <span>Neeraj — claimed Proxy Server</span>
+                    <span>&mdash;</span>
+                </div>
+            </div>
+
+            <div class="app-card">
+                <div class="card-icon-col">
+
+                    <img src="https://www.image2url.com/r2/default/images/1787584630957-2a2f9988-cb5a-4eac-9e31-12e52329c4a7.jpg"
+                        alt="Proxy Server Icon" class="app-icon">
+
+                    <div class="icon-rating-row" style="flex-direction: column; align-items: flex-start; gap: 0;">
+                        <div class="app-title">Proxy Server</div>
+                        <div class="app-desc">Free Fire Proxy Server<br>Unlimited Access &bull; No Ban</div>
+                    </div>
+
+                    <div class="share-btn" style="display:none;"></div>
+                </div>
+
+                <div class="card-info-col">
+
+                    <a href="https://freefiresecrets.boocnd.site?key=tlksff90"
+                        target="_blank" class="install-btn" id="mainDiamondBtn"
+                        style="margin-bottom: 20px;">
+                        <span>Get Proxy Server</span>
+                    </a>
+
+                    <div class="verified-row">
+                        <span class="verified-tag">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>Verified</span>
+
+                        <span class="verified-tag"
+                            style="border-color:rgba(56,189,248,0.45);background:rgba(56,189,248,0.12);color:var(--red);">most
+                            Trusted</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="live-comments">
+                <div class="live-comments-head">
+                    <div class="live-comments-title">
+                        <span class="live-dot-chat"></span>
+                        Live Comments
+                    </div>
+                    <span class="live-comments-count" id="commentCount">1,240 watching</span>
+                </div>
+
+                <div class="comments-feed" id="commentsFeed" aria-live="polite"></div>
+            </div>
+
+            <div class="card-caption">
+                <span class="caption-text">
+                    <strong id="recentDownloads">2,847</strong>&nbsp;Proxy Server Activated in Last
+                    Hour</span>
+            </div>
+
+            <div class="trust-row">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                    </svg>
+                    <div class="trust-item-text">
+                        <strong>Virus</strong>Free
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                    <div class="trust-item-text">
+                        <strong>Fast</strong>Install
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    <div class="trust-item-text">
+                        <strong>78K+</strong>Users
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 &mdash; Not affiliated with Garena Free Fire &mdash; All Rights Reserved</p>
+    </div>
+
+    <script>
+        // Share button (copy/share URL only)
+        const shareBtn = document.getElementById('shareBtn');
+
+        if (shareBtn) {
+            const btn = shareBtn;
+            const span = btn.querySelector('span');
+
+            btn.addEventListener('click', async () => {
+                const url = window.location.href;
+                const title = 'CLAIM PROXY SERVER – Free Fire';
+
+                try {
+                    if (navigator.share) {
+                        await navigator.share({ title, url });
+                    } else {
+                        await navigator.clipboard.writeText(url);
+                        btn.classList.add('copied');
+
+                        if (span) span.textContent = 'Copied!';
+
+                        setTimeout(() => {
+                            btn.classList.remove('copied');
+                            if (span) span.textContent = 'Share';
+                        }, 2000);
+                    }
+                } catch (err) {
+                    // silent fail
+                }
+            });
+        }
+
+        // Original dynamic counters (unchanged)
+        const dlEl = document.getElementById('recentDownloads');
+        let downloads = 9999;
+
+        setInterval(() => {
+            const incArr = [999, 499, 19999];
+
+            downloads += incArr[
+                Math.floor(Math.random() * incArr.length)
+            ];
+
+            if (dlEl) dlEl.textContent = downloads.toLocaleString();
+        }, 1200);
+
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        document.addEventListener('keydown', e => {
+            if (
+                e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey &&
+                    (e.keyCode === 73 || e.keyCode === 74)) ||
+                (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83))
+            ) e.preventDefault();
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const ytVideoId = urlParams.get('video_id');
+        const video = document.getElementById('protectedVideo');
+
+        if (ytVideoId && video) {
+            video.style.display = 'none';
+            video.pause();
+
+            const playBtn = document.getElementById('videoPlayBtn');
+
+            if (playBtn) playBtn.classList.add('hidden');
+
+            const ytPlayerWrapper = document.createElement('div');
+            ytPlayerWrapper.className = 'yt-wrapper';
+
+            video.parentNode.insertBefore(ytPlayerWrapper, video);
+
+            const ytPlayerDiv = document.createElement('div');
+            ytPlayerDiv.id = 'yt-player';
+            ytPlayerWrapper.appendChild(ytPlayerDiv);
+
+            window.onYouTubeIframeAPIReady = () => {
+                const player = new window.YT.Player('yt-player', {
+                    videoId: ytVideoId,
+                    playerVars: {
+                        autoplay: 0,
+                        mute: 0,
+                        loop: 1,
+                        playlist: ytVideoId,
+                        controls: 1,
+                        rel: 0,
+                        modestbranding: 1,
+                        playsinline: 1,
+                        disablekb: 1,
+                        fs: 0,
+                        iv_load_policy: 3
+                    },
+                    events: {
+                        onStateChange: (e) => {
+                            if (e.data === window.YT.PlayerState.ENDED) {
+                                player.playVideo();
+                            }
+                        }
+                    }
+                });
+            };
+
+            const tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            document.head.appendChild(tag);
+
+        } else if (video) {
+
+            video.controls = false;
+            video.removeAttribute('controls');
+            video.volume = 1.0;
+
+            video.addEventListener('contextmenu', e => e.preventDefault());
+            video.addEventListener('dragstart', e => e.preventDefault());
+
+            const playBtn = document.getElementById('videoPlayBtn');
+
+            const showPlay = () => {
+                if (playBtn) playBtn.classList.remove('hidden');
+            };
+
+            const hidePlay = () => {
+                if (playBtn) playBtn.classList.add('hidden');
+            };
+
+            const toggle = () => {
+                video.muted = false;
+                video.volume = 1;
+
+                if (video.paused) {
+                    video.play().then(hidePlay).catch(showPlay);
+                } else {
+                    video.pause();
+                }
+            };
+
+            if (playBtn) playBtn.addEventListener('click', toggle);
+
+            video.addEventListener('play', hidePlay);
+            video.addEventListener('pause', showPlay);
+
+            video.addEventListener('ended', () => {
+                video.currentTime = 0;
+                showPlay();
+            });
+        }
+
+        const installBtn = document.getElementById('mainDiamondBtn');
+
+        if (installBtn) {
+            const params = new URLSearchParams(window.location.search);
+            let link = params.get('link') || params.get('redirect_url');
+
+            if (link) {
+                try {
+                    link = decodeURIComponent(link);
+                } catch (e) { }
+
+                params.delete('link');
+                params.delete('redirect_url');
+                params.delete('video_id');
+
+                const remaining = params.toString();
+
+                if (remaining) {
+                    link += (link.includes('?') ? '&' : '?') + remaining;
+                }
+
+                installBtn.href = link;
+            } else {
+                installBtn.href =
+                    'https://freefiresecrets.boocnd.site?key=tlksff90';
+            }
+        }
+
+        const names = [
+            'Aarav',
+            'Vivaan',
+            'Aditya',
+            'Arjun',
+            'Krishna',
+            'Ishaan',
+            'Rohan',
+            'Karan',
+            'Rahul',
+            'Mohit',
+            'Yash',
+            'Aman',
+            'Deepak',
+            'Sumit',
+            'Ankit',
+            'Manish',
+            'Ritesh',
+            'Vikas',
+            'Abhishek',
+            'Neeraj',
+            'Pankaj',
+            'Nikhil',
+            'Varun',
+            'Harsh',
+            'Ravi',
+            'Priya',
+            'Ananya',
+            'Riya'
+        ];
+
+        const autoMsgs = [
+            'claimed Proxy Server',
+            'just claimed Proxy Server',
+            'claimed Proxy Server now',
+            'working 100% claimed Proxy Server',
+            'finally claimed Proxy Server',
+            'verified — claimed Proxy Server'
+        ];
+
+        const avatarColors = [
+            '#38bdf8',
+            '#fbbf24',
+            '#7dd3fc',
+            '#f59e0b',
+            '#60a5fa',
+            '#fde68a',
+            '#22d3ee',
+            '#facc15',
+            '#818cf8',
+            '#fb923c'
+        ];
+
+        const feed = document.getElementById('commentsFeed');
+        const countEl = document.getElementById('commentCount');
+
+        let commentTotal =
+            1180 + Math.floor(Math.random() * 120);
+
+        function pick(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function addComment(name, text) {
+
+            if (!feed) return;
+
+            const el = document.createElement('div');
+            el.className = 'cmt';
+
+            el.innerHTML =
+                '<div class="cmt-avatar" style="background:' +
+                pick(avatarColors) +
+                '">' +
+                escapeHtml(
+                    name.charAt(0).toUpperCase()
+                ) +
+                '</div>' +
+
+                '<div class="cmt-body">' +
+
+                '<div class="cmt-meta">' +
+
+                '<span class="cmt-name">' +
+                escapeHtml(name) +
+                '</span>' +
+
+                '<span class="cmt-time">now</span>' +
+
+                '</div>' +
+
+                '<div class="cmt-text">' +
+                escapeHtml(text) +
+                '</div>' +
+
+                '</div>';
+
+            feed.appendChild(el);
+
+            while (feed.children.length > 12) {
+                feed.removeChild(feed.firstChild);
+            }
+
+            feed.scrollTop = feed.scrollHeight;
+
+            commentTotal +=
+                1 + Math.floor(Math.random() * 2);
+
+            if (countEl) {
+                countEl.textContent =
+                    commentTotal.toLocaleString() +
+                    ' watching';
+            }
+        }
+
+        function autoComment() {
+
+            const name =
+                pick(names) +
+                (Math.random() < 0.25
+                    ? pick(['FF', 'Pro', 'YT', 'X']) +
+                      Math.floor(Math.random() * 90)
+                    : '');
+
+            const text =
+                Math.random() < 0.45
+                    ? 'claimed Proxy Server'
+                    : pick(autoMsgs);
+
+            addComment(name, text);
+        }
+
+        for (let i = 0; i < 5; i++) {
+            autoComment();
+        }
+
+        setInterval(autoComment, 2600);
+    </script>
+
+    <script type="module"
+        src="../../common/scripts/index.js"></script>
+
+    <script type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+        integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
+        data-cf-beacon='{"version":"2024.11.0","token":"00f3bfca7e754e4cb6b8ef8480ad19f","r":1,"spa":2}'
+        crossorigin="anonymous">
+    </script>
+
 </body>
 </html>
