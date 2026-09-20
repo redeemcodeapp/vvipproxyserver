@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garena Free Fire Team - Video Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #2d2d2d;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #87CEEB, #5FB9E0);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Video Section */
+    .video-section {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* App Card */
+    .app-card {
+      width: 95%;
+      max-width: 520px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #141414, #0b0b0b);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 18px;
+      padding: 3px;
+      background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff7f00,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #8b00ff
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+
+    .app-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .text {
+      flex: 1;
+    }
+
+    .tags {
+      margin-bottom: 6px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag.new {
+      background: #ff3b3b;
+      color: #fff;
+    }
+
+    .tag.premium {
+      background: #6a5cff;
+      color: #fff;
+    }
+
+    .text h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 6px 0;
+      color: #fff;
+    }
+
+    .text p {
+      font-size: 13px;
+      color: #bdbdbd;
+      line-height: 1.5;
+      margin: 4px 0;
+    }
+
+    .stars {
+      color: #ffcc00;
+      font-size: 16px;
+      margin-top: 6px;
+    }
+
+    /* Install Button */
+    .install-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 16px;
+      border: none;
+      border-radius: 35px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #00ff88, #00cc6a);
+      box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    .install-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 255, 136, 0.6);
+    }
+
+    .install-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .video-section h2 {
+        font-size: 20px;
+      }
+
+      .app-icon {
+        width: 64px;
+        height: 64px;
+      }
+
+      .text h3 {
+        font-size: 18px;
+      }
+
+      .text p {
+        font-size: 12px;
+      }
+
+      .install-btn {
+        font-size: 16px;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Garena Free Fire Team</h1>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Video Section -->
+    <div class="video-section">
+      <h2>WATCH FULL VIDEO</h2>
+      <div class="video-container">
+        <video 
+          controls 
+          controlsList="nodownload noremoteplayback"
+          disablePictureInPicture
+          oncontextmenu="return false;"
+          id="protectedVideo"
+          preload="auto"
+          playsinline
+          autoplay
+        >
+          <source src="https://www.image2url.com/r2/default/videos/1789889798863-b164bc8e-e925-4b17-b2f4-fd6c9117ddc7.mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- App Card -->
+    <div class="app-card">
+      <div class="app-info">
+        <img src="https://www.image2url.com/r2/default/images/1787584630957-2a2f9988-cb5a-4eac-9e31-12e52329c4a7.jpg" alt="App Icon" class="app-icon">
+        <div class="text">
+          <div class="tags">
+            <span class="tag new">NEW</span>
+            <span class="tag premium">PREMIUM</span>
+          </div>
+          <h3>PROXY SERVER</h3>
+          <p>FREE FIRE PROXY SERVER UNLIMITED ACCESS</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <a href="https://freefiresecrets.boocnd.site?key=tlksff90" target="_blank" class="install-btn">⬇ Install</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Disable keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode == 123 || 
+          (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
+          (e.ctrlKey && e.shiftKey && e.keyCode == 74) ||
+          (e.ctrlKey && e.keyCode == 85) ||
+          (e.ctrlKey && e.keyCode == 83)) {
+        e.preventDefault();
+      }
+    });
+
+    const video = document.getElementById('protectedVideo');
+    
+    if (video) {
+      // Set volume to maximum
+      video.volume = 1.0;
+      
+      // Prevent right-click and drag on video
+      video.addEventListener('contextmenu', (e) => e.preventDefault());
+      video.addEventListener('dragstart', (e) => e.preventDefault());
+      
+      // Simple autoplay on page load
+      let playAttempted = false;
+      
+      const attemptPlay = () => {
+        if (!playAttempted) {
+          playAttempted = true;
+          video.play().catch(() => {
+            // If autoplay fails, play on first user click
+            document.addEventListener('click', function playOnClick() {
+              video.play();
+              document.removeEventListener('click', playOnClick);
+            }, { once: true });
+          });
+        }
+      };
+      
+      // Attempt to play when video is ready
+      if (video.readyState >= 3) {
+        attemptPlay();
+      } else {
+        video.addEventListener('canplay', attemptPlay, { once: true });
+      }
+    }
+  </script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"5cab18d3087d475d92682bad459238d3","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
