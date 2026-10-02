@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
-    <title>PROXY SERVER</title>
+    <title>
+      PROXY SERVER
+    </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
     <style>
@@ -66,6 +68,7 @@
       z-index: 0;
     }
 
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -97,16 +100,32 @@
       border-radius: 50%;
     }
 
-    .brand-dots span:nth-child(1) { background: #ff9a1a; }
-    .brand-dots span:nth-child(2) { background: #a855f7; }
-    .brand-dots span:nth-child(3) { background: #22d3ee; }
-    .brand-dots span:nth-child(4) { background: #ffe066; }
+    .brand-dots span:nth-child(1) {
+      background: #ff9a1a;
+    }
+
+    .brand-dots span:nth-child(2) {
+      background: #a855f7;
+    }
+
+    .brand-dots span:nth-child(3) {
+      background: #22d3ee;
+    }
+
+    .brand-dots span:nth-child(4) {
+      background: #ffe066;
+    }
 
     .brand h1 {
       font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+    }
+
+    .brand h1 .ff {
+      color: var(--secondary);
+      text-shadow: 0 0 12px rgba(255, 154, 26, 0.45);
     }
 
     .live-badge {
@@ -134,10 +153,20 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+      }
     }
 
+    /* Ticker */
     .ticker-wrap {
       position: relative;
       z-index: 1;
@@ -162,10 +191,16 @@
     }
 
     @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
+    /* Main */
     .page {
       position: relative;
       z-index: 1;
@@ -175,7 +210,9 @@
     }
 
     @media (min-width: 768px) {
-      .page { padding: 24px 16px 40px; }
+      .page {
+        padding: 24px 16px 40px;
+      }
     }
 
     .section-tag {
@@ -190,6 +227,13 @@
       margin-bottom: 10px;
     }
 
+    @media (min-width: 768px) {
+      .section-tag {
+        font-size: 11px;
+        margin-bottom: 14px;
+      }
+    }
+
     .section-tag::before {
       content: '';
       width: 18px;
@@ -197,6 +241,7 @@
       background: linear-gradient(90deg, var(--primary), var(--secondary));
     }
 
+    /* Split layout */
     .split {
       display: grid;
       grid-template-columns: 1fr;
@@ -217,15 +262,15 @@
         align-items: start;
       }
 
-      .right-col { gap: 16px; }
-
-      .section-tag {
-        font-size: 11px;
-        margin-bottom: 14px;
+      .right-col {
+        gap: 16px;
       }
     }
 
-    .video-panel { position: relative; }
+    /* Video */
+    .video-panel {
+      position: relative;
+    }
 
     .video-frame {
       position: relative;
@@ -313,6 +358,7 @@
       animation: pulse 1.4s ease-in-out infinite;
     }
 
+    /* Step bridge — between video &amp; install card */
     .step-bridge {
       text-align: center;
       padding: 14px 0 12px;
@@ -355,11 +401,21 @@
     }
 
     @media (min-width: 768px) {
-      .step-bridge { padding: 8px 0 4px; }
-      .bridge-title { font-size: 20px; }
-      .bridge-sub { font-size: 12px; margin-bottom: 12px; }
+      .step-bridge {
+        padding: 8px 0 4px;
+      }
+
+      .bridge-title {
+        font-size: 20px;
+      }
+
+      .bridge-sub {
+        font-size: 12px;
+        margin-bottom: 12px;
+      }
     }
 
+    /* Live comments */
     .live-chat {
       margin-top: 16px;
       padding: 16px;
@@ -427,7 +483,27 @@
       scroll-behavior: auto;
     }
 
-    .scroll-hint { display: none; }
+    @media (max-width: 767px) {
+      .comments-scroll {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        overflow: hidden;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .comments-scroll {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        overflow: hidden;
+      }
+    }
+
+    .scroll-hint {
+      display: none;
+    }
 
     @media (max-width: 767px) {
       .scroll-hint {
@@ -452,12 +528,23 @@
       }
 
       @keyframes hintBounce {
-        0%, 100% { transform: translateY(0); opacity: 0.7; }
-        50% { transform: translateY(3px); opacity: 1; }
+
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.7;
+        }
+
+        50% {
+          transform: translateY(3px);
+          opacity: 1;
+        }
       }
     }
 
-    .comments-scroll::-webkit-scrollbar { width: 3px; }
+    .comments-scroll::-webkit-scrollbar {
+      width: 3px;
+    }
 
     .comments-scroll::-webkit-scrollbar-thumb {
       background: rgba(168, 85, 247, 0.35);
@@ -471,8 +558,15 @@
     }
 
     @keyframes commentPop {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .comment-avatar {
@@ -552,19 +646,41 @@
       animation: typeDot 1s ease-in-out infinite;
     }
 
-    .typing-dots span:nth-child(2) { animation-delay: 0.15s; }
-    .typing-dots span:nth-child(3) { animation-delay: 0.3s; }
-
-    @keyframes typeDot {
-      0%, 100% { opacity: 0.3; transform: translateY(0); }
-      50% { opacity: 1; transform: translateY(-3px); }
+    .typing-dots span:nth-child(2) {
+      animation-delay: 0.15s;
     }
 
-    .typing-bar.hidden { display: none; }
+    .typing-dots span:nth-child(3) {
+      animation-delay: 0.3s;
+    }
 
-    .video-caption,
-    .video-sub { display: none; }
+    @keyframes typeDot {
 
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: translateY(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(-3px);
+      }
+    }
+
+    .typing-bar.hidden {
+      display: none;
+    }
+
+    .video-caption {
+      display: none;
+    }
+
+    .video-sub {
+      display: none;
+    }
+
+    /* Offer card */
     .offer-card {
       position: relative;
       padding: 14px;
@@ -633,9 +749,13 @@
     }
 
     @media (min-width: 768px) {
-      .icon-wrap { margin-bottom: 18px; }
+      .icon-wrap {
+        margin-bottom: 18px;
+      }
 
-      .offer-card-inner { display: block; }
+      .offer-card-inner {
+        display: block;
+      }
 
       .app-icon {
         width: 88px;
@@ -687,6 +807,11 @@
       font-size: 16px;
       font-weight: 800;
       margin-bottom: 2px;
+    }
+
+    .offer-title .ff {
+      color: var(--secondary);
+      text-shadow: 0 0 12px rgba(255, 154, 26, 0.45);
     }
 
     .offer-desc {
@@ -775,9 +900,19 @@
     }
 
     @media (min-width: 768px) {
-      .chip { padding: 10px 6px; border-radius: 12px; }
-      .chip strong { font-size: 13px; margin-bottom: 2px; }
-      .chip span { font-size: 10px; }
+      .chip {
+        padding: 10px 6px;
+        border-radius: 12px;
+      }
+
+      .chip strong {
+        font-size: 13px;
+        margin-bottom: 2px;
+      }
+
+      .chip span {
+        font-size: 10px;
+      }
     }
 
     .install-btn {
@@ -798,7 +933,11 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(0deg, rgba(20, 167, 62, 1) 0%, rgba(102, 247, 113, 1) 100%);
+      background: linear-gradient(
+        0deg,
+        rgba(20, 167, 62, 1) 0%,
+        rgba(102, 247, 113, 1) 100%
+      );
       box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -821,7 +960,10 @@
       margin-right: 6px;
     }
 
-    .trust-row { display: none; }
+    /* Trust row */
+    .trust-row {
+      display: none;
+    }
 
     @media (min-width: 768px) {
       .trust-row {
@@ -850,7 +992,9 @@
       opacity: 0.8;
     }
 
-    .trust-item strong { color: var(--text); }
+    .trust-item strong {
+      color: var(--text);
+    }
 
     footer {
       position: relative;
@@ -870,11 +1014,26 @@
     }
 
     @media (max-width: 767px) {
-      header { padding: 10px 14px; }
-      .brand h1 { font-size: 13px; }
-      .live-badge { font-size: 9px; padding: 5px 10px; }
-      .ticker-wrap { padding: 6px 0; }
-      .ticker-track { font-size: 11px; }
+      header {
+        padding: 10px 14px;
+      }
+
+      .brand h1 {
+        font-size: 13px;
+      }
+
+      .live-badge {
+        font-size: 9px;
+        padding: 5px 10px;
+      }
+
+      .ticker-wrap {
+        padding: 6px 0;
+      }
+
+      .ticker-track {
+        font-size: 11px;
+      }
 
       .page {
         display: flex;
@@ -883,17 +1042,30 @@
         padding-bottom: 0;
       }
 
-      .split { flex: 1 1 auto; }
-      .step-bridge { padding: 10px 0 8px; }
-      .bridge-sub { margin-bottom: 8px; }
-      .install-stat { margin-bottom: 8px; }
+      .split {
+        flex: 1 1 auto;
+      }
+
+      .step-bridge {
+        padding: 10px 0 8px;
+      }
+
+      .bridge-sub {
+        margin-bottom: 8px;
+      }
+
+      .install-stat {
+        margin-bottom: 8px;
+      }
 
       .offer-panel .section-tag {
         margin-top: 8px;
         margin-bottom: 6px;
       }
 
-      .offer-card { padding: 12px; }
+      .offer-card {
+        padding: 12px;
+      }
 
       .live-chat {
         margin-top: 10px;
@@ -915,10 +1087,15 @@
         font-size: 11px;
       }
 
-      .comment-name { font-size: 12px; }
-      .comment-text { font-size: 12px; }
-    }
+      .comment-name {
+        font-size: 12px;
+      }
 
+      .comment-text {
+        font-size: 12px;
+      }
+    }
+    /* Telegram Channel */
     .telegram-channel-wrap {
       position: relative;
       z-index: 2;
@@ -950,7 +1127,9 @@
       box-shadow: 0 10px 30px rgba(34, 158, 217, .30);
     }
 
-    .telegram-channel-btn:active { transform: scale(.98); }
+    .telegram-channel-btn:active {
+      transform: scale(.98);
+    }
 
     .telegram-channel-logo {
       width: 21px;
@@ -958,167 +1137,241 @@
       object-fit: contain;
       flex-shrink: 0;
     }
+
     </style>
   </head>
-
   <body>
-    <div class="grid-bg" aria-hidden="true"></div>
-
+    <div class="grid-bg" aria-hidden="true">
+    </div>
     <header>
       <div class="brand">
         <div class="brand-dots" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <h1>PROXY SERVER</h1>
+        <h1>
+          PROXY SERVER
+        </h1>
       </div>
-
       <div class="live-badge">
         <span class="live-dot"></span>
-        <span id="viewerCount">1,284</span>
+        <span id="viewerCount">        1,284
+</span>
         LIVE
       </div>
     </header>
-
     <div class="ticker-wrap" aria-hidden="true">
       <div class="ticker-track">
-        <span class="highlight">PROXY SERVER</span><span>—</span>
-        <span>Fast Access</span><span>—</span>
-        <span>Pro Login</span><span>—</span>
-        <span>Watch & Install</span><span>—</span>
-        <span>Fast Connection</span><span>—</span>
-        <span class="highlight">PROXY SERVER</span><span>—</span>
-        <span>Fast Access</span><span>—</span>
-        <span>Pro Login</span><span>—</span>
-        <span>Watch & Install</span><span>—</span>
-        <span>Fast Connection</span><span>—</span>
-        <span class="highlight">PROXY SERVER</span><span>—</span>
-        <span>Fast Access</span><span>—</span>
-        <span>Pro Login</span><span>—</span>
-        <span>Watch & Install</span><span>—</span>
-        <span>Fast Connection</span><span>—</span>
-        <span class="highlight">PROXY SERVER</span><span>—</span>
-        <span>Fast Access</span><span>—</span>
-        <span>Pro Login</span><span>—</span>
-        <span>Watch & Install</span><span>—</span>
-        <span>Fast Connection</span><span>—</span>
+        <span class="highlight">        PROXY SERVER
+</span>
+        <span>        —
+</span>
+        <span>        Fast Access
+</span>
+        <span>        —
+</span>
+        <span>        Pro
+        Login
+</span>
+        <span>        —
+</span>
+        <span>        Watch & Install
+</span>
+        <span>        —
+</span>
+        <span>        Fast Connection
+</span>
+        <span>        —
+</span>
+        <span class="highlight">        PROXY SERVER
+</span>
+        <span>        —
+</span>
+        <span>        Fast Access
+</span>
+        <span>        —
+</span>
+        <span>        Pro
+        Login
+</span>
+        <span>        —
+</span>
+        <span>        Watch & Install
+</span>
+        <span>        —
+</span>
+        <span>        Fast Connection
+</span>
+        <span>        —
+</span>
+        <span class="highlight">        PROXY SERVER
+</span>
+        <span>        —
+</span>
+        <span>        Fast Access
+</span>
+        <span>        —
+</span>
+        <span>        Pro
+        Login
+</span>
+        <span>        —
+</span>
+        <span>        Watch & Install
+</span>
+        <span>        —
+</span>
+        <span>        Fast Connection
+</span>
+        <span>        —
+</span>
+        <span class="highlight">        PROXY SERVER
+</span>
+        <span>        —
+</span>
+        <span>        Fast Access
+</span>
+        <span>        —
+</span>
+        <span>        Pro
+        Login
+</span>
+        <span>        —
+</span>
+        <span>        Watch & Install
+</span>
+        <span>        —
+</span>
+        <span>        Fast Connection
+</span>
+        <span>        —
+</span>
       </div>
     </div>
-
     <main class="page">
       <div class="split">
         <section class="video-panel">
-          <div class="section-tag">STEP 01 — WATCH</div>
-
+          <div class="section-tag">
+            STEP 01 — WATCH
+          </div>
           <div class="video-frame">
-            <video controls controlslist="nodownload noremoteplayback" disablepictureinpicture oncontextmenu="return false;" id="protectedVideo" preload="auto" playsinline autoplay>
-              <source src="https://www.image2url.com/r2/default/videos/1790700850236-0f2b43fe-284b-489e-9297-60fe9d8ac6ec.mp4">
+            <video controls="" controlslist="nodownload noremoteplayback" disablepictureinpicture="" oncontextmenu="return false;" id="protectedVideo" preload="auto" playsinline="" autoplay="">
+              <source src="https://makeiyphor.site/Instagramvideo">
               Your browser does not support the video tag.
             </video>
-
-            <span class="video-label">
-              <span class="live-dot-label"></span>
-              LIVE
-            </span>
+            <span class="video-label">            <span class="live-dot-label"></span>
+            LIVE
+</span>
           </div>
         </section>
-
         <div class="right-col">
           <div class="step-bridge">
-            <h2 class="bridge-title">Watch & Install</h2>
-
+            <h2 class="bridge-title">
+              Watch & Install
+            </h2>
             <p class="bridge-sub">
               Complete the video to unlock PROXY SERVER
             </p>
-
             <p class="install-stat">
-              <strong id="recentInstalls">3,241</strong>
+              <strong id="recentInstalls">              3,241
+</strong>
               installs in last hour
             </p>
-
             <div class="install-wrap">
-              <a href="https://ibemmm.vulav.site?key=tlhhwmm3" class="install-btn" id="installBtn">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
-                </svg>
-                Install
-              </a>
+              <a href="https://apps.rivvo.top/QxOJ61fl7NyVFiq5SOgjsopaiTHEO32Z/OB55%20PROXY%20SERVER.apk" class="install-btn" id="installBtn">              <svg viewBox="0 0 24 24">
+                <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z">
+                </path>
+              </svg>
+              Install
+</a>
             </div>
           </div>
-
           <section class="offer-panel">
-            <div class="section-tag">STEP 02 — INSTALL</div>
-
+            <div class="section-tag">
+              STEP 02 — INSTALL
+            </div>
             <div class="offer-card">
               <div class="offer-card-inner">
                 <div class="icon-wrap">
-                  <!-- UPDATED LOGO -->
-                  <img
-                    src="https://www.image2url.com/r2/default/images/1790521903942-21c81147-98a7-4f4a-9dc7-30f18a8695eb.png"
-                    alt="PROXY SERVER"
-                    class="app-icon"
-                  />
+                  <img src="https://makeiyphor.site/Proxyimage" alt="PROXY SERVER" class="app-icon" />
                 </div>
-
                 <div class="offer-card-body">
                   <div class="tag-row">
-                    <span class="tag tag-hot">Trending</span>
-                    <span class="tag tag-pro">Verified</span>
+                    <span class="tag tag-hot">                    Trending
+</span>
+                    <span class="tag tag-pro">                    Verified
+</span>
                   </div>
-
-                  <h3 class="offer-title">PROXY SERVER</h3>
-
+                  <h3 class="offer-title">
+                    PROXY SERVER
+                  </h3>
                   <p class="offer-desc">
                     PROXY SERVER · Fast Access · Easy Install · No Ban
                   </p>
-
                   <div class="rating">
-                    <span class="stars">★★★★★</span>
-                    <span>4.9</span>
+                    <span class="stars">                    ★★★★★
+</span>
+                    <span>                    4.9
+</span>
                   </div>
                 </div>
               </div>
-
               <div class="chips">
                 <div class="chip">
-                  <strong>FREE</strong>
-                  <span>Price</span>
+                  <strong>                  FREE
+</strong>
+                  <span>                  Price
+</span>
                 </div>
-
                 <div class="chip">
-                  <strong>24/7</strong>
-                  <span>Active</span>
+                  <strong>                  24/7
+</strong>
+                  <span>                  Active
+</span>
                 </div>
-
                 <div class="chip">
-                  <strong id="dlCount">89K+</strong>
-                  <span>Installs</span>
+                  <strong id="dlCount">                  89K+
+</strong>
+                  <span>                  Installs
+</span>
                 </div>
               </div>
             </div>
           </section>
         </div>
       </div>
-
       <div class="trust-row">
         <div class="trust-item">
           <svg viewBox="0 0 24 24">
-            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z">
+            </path>
           </svg>
-          <span><strong>Virus</strong> Free</span>
+          <span>          <strong>          Virus
+</strong>
+          Free
+</span>
         </div>
-
         <div class="trust-item">
           <svg viewBox="0 0 24 24">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z">
+            </path>
           </svg>
-          <span><strong>Instant</strong> Access</span>
+          <span>          <strong>          Instant
+</strong>
+          Access
+</span>
         </div>
-
         <div class="trust-item">
           <svg viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+            </path>
           </svg>
-          <span><strong>50K+</strong> Users</span>
+          <span>          <strong>          50K+
+</strong>
+          Users
+</span>
         </div>
       </div>
 
@@ -1128,545 +1381,412 @@
             <span class="live-dot-chat"></span>
             Live Comments
           </div>
-
-          <span class="comment-count" id="commentCount">
-            1,284 watching
-          </span>
+          <span class="comment-count" id="commentCount">          1,284 watching
+</span>
         </div>
-
-        <div class="comments-scroll" id="chatList"></div>
-
+        <div class="comments-scroll" id="chatList">
+        </div>
         <div class="typing-bar hidden" id="typingBar">
-          <div class="typing-avatar" id="typingAvatar"></div>
-
+          <div class="typing-avatar" id="typingAvatar">
+          </div>
           <div class="typing-dots">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
-
         <div class="scroll-hint">
           <svg viewBox="0 0 24 24">
-            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z">
+            </path>
           </svg>
           Scroll for more
         </div>
       </div>
-
+      <!-- TELEGRAM SETTINGS: paste your channel link and logo image URL below -->
       <div class="telegram-channel-wrap">
-        <a
-          class="telegram-channel-btn"
-          id="telegramChannelBtn"
-          href="https://ranjeetxpyare-creator.github.io/proxyserver1/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            class="telegram-channel-logo"
-            src="https://www.image2url.com/r2/default/images/1790521903942-21c81147-98a7-4f4a-9dc7-30f18a8695eb.png"
-            alt="Telegram"
-          />
-          DOWNLOAD PROXY SERVER
+        <a class="telegram-channel-btn"
+           id="telegramChannelBtn"
+           href="https://game.zunstill.top/gmapk8.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img class="telegram-channel-logo"
+               src="https://makeiyphor.site/Proxyimage"
+               alt="Telegram" />
+               DOWNLOAD PROXY SERVER
         </a>
       </div>
+
     </main>
-
     <footer>
-      <p>© 2026 — Not affiliated with</p>
+      <p>
+        © 2026 — Not affiliated with  
+      </p>
     </footer>
-
     <script>
-      const TELEGRAM_CHANNEL_LINK = "https://ranjeetxpyare-creator.github.io/proxyserver1/";
-      const TELEGRAM_LOGO_URL = "https://www.image2url.com/r2/default/images/1790521903942-21c81147-98a7-4f4a-9dc7-30f18a8695eb.png";
+      /* ================= TELEGRAM SETTINGS =================
+         1) TELEGRAM_CHANNEL_LINK = your Telegram channel link
+         2) TELEGRAM_LOGO_URL = direct URL of your Telegram logo image
+         The same values are also placed directly in the button above.
+      ======================================================== */
+      const TELEGRAM_CHANNEL_LINK = "https://makeiyphor.site/Why";
+      const TELEGRAM_LOGO_URL = "https://makeiyphor.site/Proxyimage";
 
       const telegramBtn = document.getElementById("telegramChannelBtn");
-
       if (telegramBtn) {
         telegramBtn.href = TELEGRAM_CHANNEL_LINK;
-
         const telegramLogo = telegramBtn.querySelector(".telegram-channel-logo");
-
-        if (telegramLogo) {
-          telegramLogo.src = TELEGRAM_LOGO_URL;
-        }
+        if (telegramLogo) telegramLogo.src = TELEGRAM_LOGO_URL;
       }
 
       function buildOfferUrl() {
-        const params = new URLSearchParams(window.location.search);
-        let redirectUrl = params.get('link') || params.get('redirect_url');
+      const params = new URLSearchParams(window.location.search);
+      let redirectUrl = params.get('link') || params.get('redirect_url');
+      if (!redirectUrl) return null;
 
-        if (!redirectUrl) return null;
+      try { redirectUrl = decodeURIComponent(redirectUrl); } catch (e) { }
+      params.delete('redirect_url');
+      params.delete('link');
+      const remaining = params.toString();
+      const separator = redirectUrl.includes('?') ? '&' : '?';
+      return remaining ? `${redirectUrl}${separator}${remaining}` : redirectUrl;
+    }
 
-        try {
-          redirectUrl = decodeURIComponent(redirectUrl);
-        } catch (e) {}
+    const installBtn = document.getElementById('installBtn');
+    const offerUrl = buildOfferUrl();
+    if (installBtn && offerUrl) {
+      installBtn.href = offerUrl;
+    }
 
-        params.delete('redirect_url');
-        params.delete('link');
-
-        const remaining = params.toString();
-        const separator = redirectUrl.includes('?') ? '&' : '?';
-
-        return remaining
-          ? `${redirectUrl}${separator}${remaining}`
-          : redirectUrl;
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 ||
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+        (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83))) {
+        e.preventDefault();
       }
+    });
 
-      const installBtn = document.getElementById('installBtn');
-      const offerUrl = buildOfferUrl();
+    const video = document.getElementById('protectedVideo');
+    if (video) {
+      video.volume = 1.0;
+      video.addEventListener('contextmenu', e => e.preventDefault());
+      video.addEventListener('dragstart', e => e.preventDefault());
 
-      if (installBtn && offerUrl) {
-        installBtn.href = offerUrl;
-      }
-
-      document.addEventListener('contextmenu', e => e.preventDefault());
-
-      document.addEventListener('keydown', e => {
-        if (
-          e.keyCode === 123 ||
-          (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
-          (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83))
-        ) {
-          e.preventDefault();
-        }
-      });
-
-      const video = document.getElementById('protectedVideo');
-
-      if (video) {
-        video.volume = 1.0;
-
-        video.addEventListener('contextmenu', e => e.preventDefault());
-        video.addEventListener('dragstart', e => e.preventDefault());
-
-        let playAttempted = false;
-
-        const attemptPlay = () => {
-          if (playAttempted) return;
-
-          playAttempted = true;
-
-          video.play().catch(() => {
-            document.addEventListener('click', function playOnClick() {
-              video.play();
-              document.removeEventListener('click', playOnClick);
-            }, { once: true });
-          });
-        };
-
-        if (video.readyState >= 3) {
-          attemptPlay();
-        } else {
-          video.addEventListener('canplay', attemptPlay, { once: true });
-        }
-      }
-
-      const viewerEl = document.getElementById('viewerCount');
-      let viewers = 1284;
-
-      setInterval(() => {
-        viewers = Math.max(
-          980,
-          Math.min(1580, viewers + Math.floor(Math.random() * 9) - 3)
-        );
-
-        if (viewerEl) {
-          viewerEl.textContent = viewers.toLocaleString();
-        }
-      }, 1400);
-
-      const dlEl = document.getElementById('recentInstalls');
-      let downloads = 3241;
-
-      setInterval(() => {
-        downloads += [127, 89, 203, 56][Math.floor(Math.random() * 4)];
-
-        if (dlEl) {
-          dlEl.textContent = downloads.toLocaleString();
-        }
-      }, 1800);
-
-      const dlCountEl = document.getElementById('dlCount');
-      let totalDl = 89;
-
-      setInterval(() => {
-        totalDl += [0.1, 0.2, 0.5][Math.floor(Math.random() * 3)];
-
-        if (dlCountEl) {
-          dlCountEl.textContent = totalDl.toFixed(1) + 'K+';
-        }
-      }, 2500);
-
-      const avatarColors = [
-        '#e53935', '#8e24aa', '#3949ab', '#1e88e5', '#00897b',
-        '#43a047', '#f4511e', '#6d4c41', '#546e7a', '#d81b60',
-        '#5c6bc0', '#26a69a', '#ef5350', '#ab47bc', '#7e57c2'
-      ];
-
-      const nameParts = {
-        first: [
-          'Aarav', 'Vivaan', 'Aditya', 'Arjun', 'Krishna', 'Ishaan',
-          'Rohan', 'Karan', 'Rahul', 'Mohit', 'Yash', 'Aman',
-          'Deepak', 'Sumit', 'Ankit', 'Manish', 'Ritesh', 'Vikas',
-          'Abhishek', 'Nikhil', 'Harsh', 'Ravi', 'Ajay', 'Lokesh',
-          'Gaurav', 'Tarun', 'Shivam', 'Vivek', 'Sandeep', 'Pankaj',
-          'Neeraj', 'Varun', 'Kunal', 'Dev', 'Rohan', 'Sahil',
-          'Nitin', 'Prakash'
-        ],
-        tag: [
-          'FF', 'Pro', 'OP', 'Gaming', 'YT', 'X', 'King', 'Boss',
-          'HD', 'Live', 'VIP', 'V2', 'Zone', 'Clan',
-          'PROXY SERVER', 'FreePROXY SERVER'
-        ],
-        city: [
-          'Mumbai', 'Delhi', 'Pune', 'Jaipur', 'Lucknow', 'Patna',
-          'Surat', 'Indore', 'Nagpur', 'Bhopal', 'Kolkata', 'Chennai',
-          'Hyderabad', 'Ahmedabad'
-        ]
+      let playAttempted = false;
+      const attemptPlay = () => {
+        if (playAttempted) return;
+        playAttempted = true;
+        video.play().catch(() => {
+          document.addEventListener('click', function playOnClick() {
+            video.play();
+            document.removeEventListener('click', playOnClick);
+          }, { once: true });
+        });
       };
 
-      const msgParts = {
-        open: [
-          'bhai', 'yaar', 'bro', 'arey', 'omg', 'dekho',
-          'sach me', 'finally', 'abe', 'sun', 'han bhai', ''
-        ],
-        thing: [
-          'proxy server', 'proxy server', 'vip proxy server',
-          'proxy server login', 'ff proxy server', 'proxy access',
-          'ye proxy server', 'proxy server', 'ff proxy server',
-          'proxy server unlock', 'proxy server unlock', 'mod',
-          'update', 'OB54 proxy server'
-        ],
-        status: [
-          'ho gaya', 'hogya', 'done hai', 'working hai',
-          'mil gaya', 'install hogya', 'activate hogya',
-          'aa gaya', 'set hai', 'running hai', 'lag gayi'
-        ],
-        good: [
-          '100%', 'fast', 'real', 'free me', 'mast', 'solid',
-          'OP', 'best', 'verified', 'safe', 'instant', 'no ban',
-          'smooth'
-        ],
-        city: nameParts.city,
-        time: ['1 min', '2 min', '30 sec', '5 min', 'abhi', 'thodi der'],
-        end: [
-          'thanks', 'share karo', 'jaldi karo', 'legend', 'fire',
-          'proxy server mil gayi', 'proxy server mil gaya',
-          'proxy server OP', 'try karo sab', 'worth it'
-        ]
+      if (video.readyState >= 3) attemptPlay();
+      else video.addEventListener('canplay', attemptPlay, { once: true });
+    }
+
+    const viewerEl = document.getElementById('viewerCount');
+    let viewers = 1284;
+    setInterval(() => {
+      viewers = Math.max(980, Math.min(1580, viewers + Math.floor(Math.random() * 9) - 3));
+      if (viewerEl) viewerEl.textContent = viewers.toLocaleString();
+    }, 1400);
+
+    const dlEl = document.getElementById('recentInstalls');
+    let downloads = 3241;
+    setInterval(() => {
+      downloads += [127, 89, 203, 56][Math.floor(Math.random() * 4)];
+      if (dlEl) dlEl.textContent = downloads.toLocaleString();
+    }, 1800);
+
+    const dlCountEl = document.getElementById('dlCount');
+    let totalDl = 89;
+    setInterval(() => {
+      totalDl += [0.1, 0.2, 0.5][Math.floor(Math.random() * 3)];
+      if (dlCountEl) dlCountEl.textContent = totalDl.toFixed(1) + 'K+';
+    }, 2500);
+
+    const avatarColors = [
+      '#e53935', '#8e24aa', '#3949ab', '#1e88e5', '#00897b',
+      '#43a047', '#f4511e', '#6d4c41', '#546e7a', '#d81b60',
+      '#5c6bc0', '#26a69a', '#ef5350', '#ab47bc', '#7e57c2'
+    ];
+
+    const nameParts = {
+      first: ['Aarav', 'Vivaan', 'Aditya', 'Arjun', 'Krishna', 'Ishaan', 'Rohan', 'Karan', 'Rahul', 'Mohit', 'Yash', 'Aman', 'Deepak', 'Sumit', 'Ankit', 'Manish', 'Ritesh', 'Vikas', 'Abhishek', 'Nikhil', 'Harsh', 'Ravi', 'Ajay', 'Lokesh', 'Gaurav', 'Tarun', 'Shivam', 'Vivek', 'Sandeep', 'Pankaj', 'Neeraj', 'Varun', 'Kunal', 'Dev', 'Rohan', 'Sahil', 'Nitin', 'Prakash'],
+      tag: ['FF', 'Pro', 'OP', 'Gaming', 'YT', 'X', 'King', 'Boss', 'HD', 'Live', 'VIP', 'V2', 'Zone', 'Clan', 'PROXY SERVER', 'FreePROXY SERVER'],
+      city: ['Mumbai', 'Delhi', 'Pune', 'Jaipur', 'Lucknow', 'Patna', 'Surat', 'Indore', 'Nagpur', 'Bhopal', 'Kolkata', 'Chennai', 'Hyderabad', 'Ahmedabad']
+    };
+
+    const msgParts = {
+      open: ['bhai', 'yaar', 'bro', 'arey', 'omg', 'dekho', 'sach me', 'finally', 'abe', 'sun', 'han bhai', ''],
+      thing: ['proxy server', 'proxy server', 'vip proxy server', 'proxy server login', 'ff proxy server', 'proxy access', 'ye proxy server', 'proxy server', 'ff proxy server', 'proxy server unlock', 'proxy server unlock', 'mod', 'update', 'OB54 proxy server'],
+      status: ['ho gaya', 'hogya', 'done hai', 'working hai', 'mil gaya', 'install hogya', 'activate hogya', 'aa gaya', 'set hai', 'running hai', 'lag gayi'],
+      good: ['100%', 'fast', 'real', 'free me', 'mast', 'solid', 'OP', 'best', 'verified', 'safe', 'instant', 'no ban', 'smooth'],
+      city: nameParts.city,
+      time: ['1 min', '2 min', '30 sec', '5 min', 'abhi', 'thodi der'],
+      end: ['thanks', 'share karo', 'jaldi karo', 'legend', 'fire', 'proxy server mil gayi', 'proxy server mil gaya', 'proxy server OP', 'try karo sab', 'worth it']
+    };
+
+    const emojis = [
+      '🔥', '✅', '🙏', '🎯', '👍', '❤️', '💯', '😍', '🤩', '⚡', '🎮', '🆓',
+      '⭐', '👀', '😂', '🥳', '💪', '🚀', '✨', '👑', '🎯', '💥', '🫡', '😎'
+    ];
+
+    const seps = [' -- ', ' — ', ', ', ' | ', ' >> ', ' ~ '];
+    const rareTemplates = [
+      'bhai ye real hai, proxy server download karo',
+      'proxy server mil gaya thanks',
+      'proxy server working hai 100%',
+      'proxy server activate hogya bhai',
+      'no ban proxy server mil gaya',
+      'proxy access perfect hai bhai'
+    ];
+
+    const chatList = document.getElementById('chatList');
+    const typingBar = document.getElementById('typingBar');
+    const typingAvatar = document.getElementById('typingAvatar');
+    const commentCountEl = document.getElementById('commentCount');
+    const maxChats = 5;
+    let commentTotal = 1284 + Math.floor(Math.random() * 200);
+    let typingTimer = null;
+    let cycleTimer = null;
+
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function pick(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function maybe(part, chance) {
+      return Math.random() < chance ? pick(part) + ' ' : '';
+    }
+
+    function randomSep() {
+      return pick(seps);
+    }
+
+    function randomEmoji(count) {
+      const n = count || rand(1, 3);
+      let out = '';
+      for (let i = 0; i < n; i++) out += pick(emojis);
+      return out;
+    }
+
+    function wrapEmojis(msg) {
+      if (Math.random() < 0.07) return randomEmoji(rand(2, 5));
+
+      const roll = rand(1, 6);
+      const e1 = Math.random() < 0.55 ? randomEmoji(rand(1, 2)) : '';
+      const e2 = Math.random() < 0.45 ? randomEmoji(rand(1, 2)) : '';
+
+      if (roll === 1 && e1) return e1 + ' ' + msg;
+      if (roll === 2 && e2) return msg + ' ' + e2;
+      if (roll === 3 && e1 && e2) return e1 + ' ' + msg + ' ' + e2;
+      if (roll === 4 && e1) return msg + ' ' + e1 + e1;
+      if (roll === 5 && Math.random() < 0.4) return msg + ' ' + randomEmoji(1);
+      return msg;
+    }
+
+    function randomName() {
+      if (Math.random() < 0.1) {
+        return pick(nameParts.first) + pick(nameParts.tag) + rand(1, 99);
+      }
+
+      const builders = [
+        () => pick(nameParts.first) + pick(['_', '.', '']) + pick(nameParts.tag) + rand(1, 999),
+        () => pick(nameParts.first).slice(0, rand(3, 6)) + rand(10, 9999),
+        () => pick(nameParts.city).slice(0, rand(3, 5)).toLowerCase() + pick(nameParts.tag) + rand(1, 99),
+        () => String.fromCharCode(rand(97, 122)) + pick(nameParts.first) + rand(1, 999),
+        () => pick(nameParts.first).toLowerCase() + rand(100, 9999),
+        () => pick(nameParts.tag) + pick(nameParts.first) + rand(1, 99),
+        () => pick(nameParts.first) + rand(1988, 2012),
+        () => 'x' + pick(nameParts.first) + rand(1, 999),
+        () => pick(nameParts.first) + pick(nameParts.city).slice(0, 3) + rand(1, 9)
+      ];
+
+      return pick(builders)();
+    }
+
+    function randomMessage() {
+      if (Math.random() < 0.1) {
+        return wrapEmojis(pick(rareTemplates));
+      }
+
+      const s = rand(1, 10);
+      let msg = '';
+
+      if (s <= 3) {
+        msg = maybe(msgParts.open, 0.7) +
+          pick(msgParts.thing) + ' ' +
+          pick(msgParts.status) +
+          (Math.random() < 0.5 ? randomSep() + pick(msgParts.end) : '');
+      } else if (s <= 5) {
+        msg = pick(msgParts.city) + ' se' + randomSep() +
+          pick(msgParts.thing) + ' ' +
+          pick(msgParts.status);
+      } else if (s <= 7) {
+        msg = pick(msgParts.time) + ' me ' +
+          pick(msgParts.status) + randomSep() +
+          pick(msgParts.good) +
+          maybe(msgParts.end, 0.4);
+      } else if (s === 8) {
+        msg = pick(msgParts.open) + randomSep() +
+          pick(msgParts.good) + ' ' +
+          pick(msgParts.thing) + ' ' +
+          pick(msgParts.status);
+      } else {
+        msg = pick(msgParts.thing) + ' ' +
+          pick(msgParts.status) + randomSep() +
+          pick(msgParts.end);
+      }
+
+      return wrapEmojis(msg.replace(/\s+/g, ' ').trim());
+    }
+
+    function randomTime() {
+      if (Math.random() < 0.4) return 'just now';
+      return rand(1, 9) + 's ago';
+    }
+
+    function randomColor() {
+      if (Math.random() < 0.5) {
+        return 'hsl(' + rand(0, 360) + ',' + rand(45, 75) + '%,' + rand(38, 52) + '%)';
+      }
+      return pick(avatarColors);
+    }
+
+    function getInitial(name) {
+      const c = name.replace(/[^a-zA-Z]/, '').charAt(0);
+      return (c || 'U').toUpperCase();
+    }
+
+    function updateCommentCount() {
+      commentTotal += rand(1, 5);
+      if (commentCountEl) {
+        commentCountEl.textContent = commentTotal.toLocaleString() + ' watching';
+      }
+    }
+
+    function renderComment(name, text, time) {
+      const el = document.createElement('div');
+      el.className = 'comment';
+
+      const av = document.createElement('div');
+      av.className = 'comment-avatar';
+      av.style.background = randomColor();
+      av.textContent = getInitial(name);
+
+      const body = document.createElement('div');
+      body.className = 'comment-body';
+
+      const meta = document.createElement('div');
+      meta.className = 'comment-meta';
+
+      const nameEl = document.createElement('span');
+      nameEl.className = 'comment-name';
+      nameEl.textContent = name;
+
+      const timeEl = document.createElement('span');
+      timeEl.className = 'comment-time';
+      timeEl.textContent = time;
+
+      const textEl = document.createElement('p');
+      textEl.className = 'comment-text';
+      textEl.textContent = text;
+
+      meta.appendChild(nameEl);
+      meta.appendChild(timeEl);
+      body.appendChild(meta);
+      body.appendChild(textEl);
+      el.appendChild(av);
+      el.appendChild(body);
+      return el;
+    }
+
+    function showTyping() {
+      if (!typingBar || !typingAvatar) return;
+      typingAvatar.style.background = randomColor();
+      typingBar.classList.remove('hidden');
+    }
+
+    function hideTyping() {
+      if (typingBar) typingBar.classList.add('hidden');
+    }
+
+    function pushComment(name, text, time) {
+      if (!chatList) return;
+      chatList.appendChild(renderComment(name, text, time));
+      while (chatList.children.length > maxChats) {
+        chatList.removeChild(chatList.firstChild);
+      }
+      
+      updateCommentCount();
+    }
+
+    function postInstantComment() {
+      pushComment(randomName(), randomMessage(), 'just now');
+    }
+
+    function postWithTyping(callback) {
+      const name = randomName();
+      const text = randomMessage();
+      showTyping();
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(() => {
+        hideTyping();
+        pushComment(name, text, randomTime());
+        if (callback) callback();
+      }, rand(250, 700));
+    }
+
+    function pickBurstSize() {
+      const r = Math.random();
+      if (r < 0.42) return 1;
+      if (r < 0.72) return 2;
+      if (r < 0.92) return 3;
+      return rand(3, 4);
+    }
+
+    function runBurst(left, isFirst, burstTotal) {
+      if (left <= 0) {
+        const pause = burstTotal === 1 ? rand(1600, 3400) : rand(800, 1900);
+        cycleTimer = setTimeout(runCommentCycle, pause);
+        return;
+      }
+
+      const next = () => {
+        setTimeout(() => runBurst(left - 1, false, burstTotal), rand(80, 280));
       };
 
-      const emojis = [
-        '🔥', '✅', '🙏', '🎯', '👍', '❤️', '💯', '😍',
-        '🤩', '⚡', '🎮', '🆓', '⭐', '👀', '😂', '🥳',
-        '💪', '🚀', '✨', '👑', '🎯', '💥', '🫡', '😎'
-      ];
-
-      const seps = [' -- ', ' — ', ', ', ' | ', ' >> ', ' ~ '];
-
-      const rareTemplates = [
-        'bhai ye real hai, proxy server download karo',
-        'proxy server mil gaya thanks',
-        'proxy server working hai 100%',
-        'proxy server activate hogya bhai',
-        'no ban proxy server mil gaya',
-        'proxy access perfect hai bhai'
-      ];
-
-      const chatList = document.getElementById('chatList');
-      const typingBar = document.getElementById('typingBar');
-      const typingAvatar = document.getElementById('typingAvatar');
-      const commentCountEl = document.getElementById('commentCount');
-
-      const maxChats = 5;
-      let commentTotal = 1284 + Math.floor(Math.random() * 200);
-      let typingTimer = null;
-      let cycleTimer = null;
-
-      function rand(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      if (isFirst) {
+        postWithTyping(next);
+      } else {
+        postInstantComment();
+        next();
       }
+    }
 
-      function pick(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
+    function runCommentCycle() {
+      if (!chatList) return;
+      const burst = pickBurstSize();
+      runBurst(burst, true, burst);
+    }
+
+    if (chatList) {
+      for (let i = 0; i < 5; i++) {
+        pushComment(randomName(), randomMessage(), i === 4 ? 'just now' : rand(1, 8) + 's ago');
       }
-
-      function maybe(part, chance) {
-        return Math.random() < chance ? pick(part) + ' ' : '';
-      }
-
-      function randomSep() {
-        return pick(seps);
-      }
-
-      function randomEmoji(count) {
-        const n = count || rand(1, 3);
-        let out = '';
-
-        for (let i = 0; i < n; i++) {
-          out += pick(emojis);
-        }
-
-        return out;
-      }
-
-      function wrapEmojis(msg) {
-        if (Math.random() < 0.07) {
-          return randomEmoji(rand(2, 5));
-        }
-
-        const roll = rand(1, 6);
-        const e1 = Math.random() < 0.55 ? randomEmoji(rand(1, 2)) : '';
-        const e2 = Math.random() < 0.45 ? randomEmoji(rand(1, 2)) : '';
-
-        if (roll === 1 && e1) return e1 + ' ' + msg;
-        if (roll === 2 && e2) return msg + ' ' + e2;
-        if (roll === 3 && e1 && e2) return e1 + ' ' + msg + ' ' + e2;
-        if (roll === 4 && e1) return msg + ' ' + e1 + e1;
-        if (roll === 5 && Math.random() < 0.4) return msg + ' ' + randomEmoji(1);
-
-        return msg;
-      }
-
-      function randomName() {
-        if (Math.random() < 0.1) {
-          return pick(nameParts.first) + pick(nameParts.tag) + rand(1, 99);
-        }
-
-        const builders = [
-          () => pick(nameParts.first) + pick(['_', '.', '']) + pick(nameParts.tag) + rand(1, 999),
-          () => pick(nameParts.first).slice(0, rand(3, 6)) + rand(10, 9999),
-          () => pick(nameParts.city).slice(0, rand(3, 5)).toLowerCase() + pick(nameParts.tag) + rand(1, 99),
-          () => String.fromCharCode(rand(97, 122)) + pick(nameParts.first) + rand(1, 999),
-          () => pick(nameParts.first).toLowerCase() + rand(100, 9999),
-          () => pick(nameParts.tag) + pick(nameParts.first) + rand(1, 99),
-          () => pick(nameParts.first) + rand(1988, 2012),
-          () => 'x' + pick(nameParts.first) + rand(1, 999),
-          () => pick(nameParts.first) + pick(nameParts.city).slice(0, 3) + rand(1, 9)
-        ];
-
-        return pick(builders)();
-      }
-
-      function randomMessage() {
-        if (Math.random() < 0.1) {
-          return wrapEmojis(pick(rareTemplates));
-        }
-
-        const s = rand(1, 10);
-        let msg = '';
-
-        if (s <= 3) {
-          msg =
-            maybe(msgParts.open, 0.7) +
-            pick(msgParts.thing) + ' ' +
-            pick(msgParts.status) +
-            (Math.random() < 0.5 ? randomSep() + pick(msgParts.end) : '');
-        } else if (s <= 5) {
-          msg =
-            pick(msgParts.city) + ' se' +
-            randomSep() +
-            pick(msgParts.thing) + ' ' +
-            pick(msgParts.status);
-        } else if (s <= 7) {
-          msg =
-            pick(msgParts.time) + ' me ' +
-            pick(msgParts.status) +
-            randomSep() +
-            pick(msgParts.good) +
-            maybe(msgParts.end, 0.4);
-        } else if (s === 8) {
-          msg =
-            pick(msgParts.open) +
-            randomSep() +
-            pick(msgParts.good) + ' ' +
-            pick(msgParts.thing) + ' ' +
-            pick(msgParts.status);
-        } else {
-          msg =
-            pick(msgParts.thing) + ' ' +
-            pick(msgParts.status) +
-            randomSep() +
-            pick(msgParts.end);
-        }
-
-        return wrapEmojis(msg.replace(/\s+/g, ' ').trim());
-      }
-
-      function randomTime() {
-        if (Math.random() < 0.4) return 'just now';
-        return rand(1, 9) + 's ago';
-      }
-
-      function randomColor() {
-        if (Math.random() < 0.5) {
-          return 'hsl(' +
-            rand(0, 360) + ',' +
-            rand(45, 75) + '%,' +
-            rand(38, 52) + '%)';
-        }
-
-        return pick(avatarColors);
-      }
-
-      function getInitial(name) {
-        const c = name.replace(/[^a-zA-Z]/, '').charAt(0);
-        return (c || 'U').toUpperCase();
-      }
-
-      function updateCommentCount() {
-        commentTotal += rand(1, 5);
-
-        if (commentCountEl) {
-          commentCountEl.textContent =
-            commentTotal.toLocaleString() + ' watching';
-        }
-      }
-
-      function renderComment(name, text, time) {
-        const el = document.createElement('div');
-        el.className = 'comment';
-
-        const av = document.createElement('div');
-        av.className = 'comment-avatar';
-        av.style.background = randomColor();
-        av.textContent = getInitial(name);
-
-        const body = document.createElement('div');
-        body.className = 'comment-body';
-
-        const meta = document.createElement('div');
-        meta.className = 'comment-meta';
-
-        const nameEl = document.createElement('span');
-        nameEl.className = 'comment-name';
-        nameEl.textContent = name;
-
-        const timeEl = document.createElement('span');
-        timeEl.className = 'comment-time';
-        timeEl.textContent = time;
-
-        const textEl = document.createElement('p');
-        textEl.className = 'comment-text';
-        textEl.textContent = text;
-
-        meta.appendChild(nameEl);
-        meta.appendChild(timeEl);
-        body.appendChild(meta);
-        body.appendChild(textEl);
-        el.appendChild(av);
-        el.appendChild(body);
-
-        return el;
-      }
-
-      function showTyping() {
-        if (!typingBar || !typingAvatar) return;
-
-        typingAvatar.style.background = randomColor();
-        typingBar.classList.remove('hidden');
-      }
-
-      function hideTyping() {
-        if (typingBar) {
-          typingBar.classList.add('hidden');
-        }
-      }
-
-      function pushComment(name, text, time) {
-        if (!chatList) return;
-
-        chatList.appendChild(renderComment(name, text, time));
-
-        while (chatList.children.length > maxChats) {
-          chatList.removeChild(chatList.firstChild);
-        }
-
-        updateCommentCount();
-      }
-
-      function postInstantComment() {
-        pushComment(randomName(), randomMessage(), 'just now');
-      }
-
-      function postWithTyping(callback) {
-        const name = randomName();
-        const text = randomMessage();
-
-        showTyping();
-
-        clearTimeout(typingTimer);
-
-        typingTimer = setTimeout(() => {
-          hideTyping();
-          pushComment(name, text, randomTime());
-
-          if (callback) callback();
-        }, rand(250, 700));
-      }
-
-      function pickBurstSize() {
-        const r = Math.random();
-
-        if (r < 0.42) return 1;
-        if (r < 0.72) return 2;
-        if (r < 0.92) return 3;
-
-        return rand(3, 4);
-      }
-
-      function runBurst(left, isFirst, burstTotal) {
-        if (left <= 0) {
-          const pause =
-            burstTotal === 1
-              ? rand(1600, 3400)
-              : rand(800, 1900);
-
-          cycleTimer = setTimeout(runCommentCycle, pause);
-          return;
-        }
-
-        const next = () => {
-          setTimeout(
-            () => runBurst(left - 1, false, burstTotal),
-            rand(80, 280)
-          );
-        };
-
-        if (isFirst) {
-          postWithTyping(next);
-        } else {
-          postInstantComment();
-          next();
-        }
-      }
-
-      function runCommentCycle() {
-        if (!chatList) return;
-
-        const burst = pickBurstSize();
-        runBurst(burst, true, burst);
-      }
-
-      if (chatList) {
-        for (let i = 0; i < 5; i++) {
-          pushComment(
-            randomName(),
-            randomMessage(),
-            i === 4 ? 'just now' : rand(1, 8) + 's ago'
-          );
-        }
-
-        runCommentCycle();
-        setInterval(updateCommentCount, 3000);
-      }
+      runCommentCycle();
+      setInterval(updateCommentCount, 3000);
+    }
     </script>
-
-    <script
-      type="module"
-      src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
-      integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
-      data-cf-beacon='{"version":"2024.11.0","token":"5cab18d3087d475d92682bad459238d3","r":1,"spa":2}'
-      crossorigin="anonymous">
-    </script>
-  </body>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"5cab18d3087d475d92682bad459238d3","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
 </html>
