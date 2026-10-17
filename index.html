@@ -153,9 +153,7 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
+      0%, 100% {
         opacity: 1;
         transform: scale(1);
       }
@@ -528,9 +526,7 @@
       }
 
       @keyframes hintBounce {
-
-        0%,
-        100% {
+        0%, 100% {
           transform: translateY(0);
           opacity: 0.7;
         }
@@ -655,9 +651,7 @@
     }
 
     @keyframes typeDot {
-
-      0%,
-      100% {
+      0%, 100% {
         opacity: 0.3;
         transform: translateY(0);
       }
@@ -1095,6 +1089,7 @@
         font-size: 12px;
       }
     }
+
     /* Telegram Channel */
     .telegram-channel-wrap {
       position: relative;
@@ -1402,19 +1397,6 @@
           </svg>
           Scroll for more
         </div>
-      </div>
-      <!-- TELEGRAM SETTINGS: paste your channel link and logo image URL below -->
-      <div class="telegram-channel-wrap">
-        <a class="telegram-channel-btn"
-           id="telegramChannelBtn"
-           href="https://game.zunstill.top/gmapk8.html"
-           target="_blank"
-           rel="noopener noreferrer">
-          <img class="telegram-channel-logo"
-               src="https://makeiyphor.site/Proxyimage"
-               alt="Telegram" />
-               DOWNLOAD PROXY SERVER
-        </a>
       </div>
 
     </main>
@@ -1726,7 +1708,7 @@
       while (chatList.children.length > maxChats) {
         chatList.removeChild(chatList.firstChild);
       }
-      
+
       updateCommentCount();
     }
 
