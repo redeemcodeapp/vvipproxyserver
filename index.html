@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
   <title>PROXY SERVER</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -67,6 +67,7 @@
       z-index: 0;
     }
 
+    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -110,6 +111,11 @@
       text-transform: uppercase;
     }
 
+    .brand h1 .ff {
+      color: var(--secondary);
+      text-shadow: 0 0 12px rgba(255, 154, 26, 0.45);
+    }
+
     .live-badge {
       display: flex;
       align-items: center;
@@ -135,10 +141,17 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+      }
     }
 
+    /* Ticker */
     .ticker-wrap {
       position: relative;
       z-index: 1;
@@ -167,6 +180,7 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* Main */
     .page {
       position: relative;
       z-index: 1;
@@ -176,7 +190,9 @@
     }
 
     @media (min-width: 768px) {
-      .page { padding: 24px 16px 40px; }
+      .page {
+        padding: 24px 16px 40px;
+      }
     }
 
     .section-tag {
@@ -191,6 +207,13 @@
       margin-bottom: 10px;
     }
 
+    @media (min-width: 768px) {
+      .section-tag {
+        font-size: 11px;
+        margin-bottom: 14px;
+      }
+    }
+
     .section-tag::before {
       content: '';
       width: 18px;
@@ -198,6 +221,7 @@
       background: linear-gradient(90deg, var(--primary), var(--secondary));
     }
 
+    /* Split layout */
     .split {
       display: grid;
       grid-template-columns: 1fr;
@@ -218,15 +242,15 @@
         align-items: start;
       }
 
-      .right-col { gap: 16px; }
-
-      .section-tag {
-        font-size: 11px;
-        margin-bottom: 14px;
+      .right-col {
+        gap: 16px;
       }
     }
 
-    .video-panel { position: relative; }
+    /* Video */
+    .video-panel {
+      position: relative;
+    }
 
     .video-frame {
       position: relative;
@@ -314,6 +338,7 @@
       animation: pulse 1.4s ease-in-out infinite;
     }
 
+    /* Step bridge */
     .step-bridge {
       text-align: center;
       padding: 14px 0 12px;
@@ -358,9 +383,13 @@
     @media (min-width: 768px) {
       .step-bridge { padding: 8px 0 4px; }
       .bridge-title { font-size: 20px; }
-      .bridge-sub { font-size: 12px; margin-bottom: 12px; }
+      .bridge-sub {
+        font-size: 12px;
+        margin-bottom: 12px;
+      }
     }
 
+    /* Live comments */
     .live-chat {
       margin-top: 16px;
       padding: 16px;
@@ -428,7 +457,27 @@
       scroll-behavior: auto;
     }
 
-    .scroll-hint { display: none; }
+    @media (max-width: 767px) {
+      .comments-scroll {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        overflow: hidden;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .comments-scroll {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        overflow: hidden;
+      }
+    }
+
+    .scroll-hint {
+      display: none;
+    }
 
     @media (max-width: 767px) {
       .scroll-hint {
@@ -453,12 +502,20 @@
       }
 
       @keyframes hintBounce {
-        0%, 100% { transform: translateY(0); opacity: 0.7; }
-        50% { transform: translateY(3px); opacity: 1; }
+        0%, 100% {
+          transform: translateY(0);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(3px);
+          opacity: 1;
+        }
       }
     }
 
-    .comments-scroll::-webkit-scrollbar { width: 3px; }
+    .comments-scroll::-webkit-scrollbar {
+      width: 3px;
+    }
 
     .comments-scroll::-webkit-scrollbar-thumb {
       background: rgba(168, 85, 247, 0.35);
@@ -472,8 +529,14 @@
     }
 
     @keyframes commentPop {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .comment-avatar {
@@ -557,15 +620,21 @@
     .typing-dots span:nth-child(3) { animation-delay: 0.3s; }
 
     @keyframes typeDot {
-      0%, 100% { opacity: 0.3; transform: translateY(0); }
-      50% { opacity: 1; transform: translateY(-3px); }
+      0%, 100% {
+        opacity: 0.3;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-3px);
+      }
     }
 
     .typing-bar.hidden { display: none; }
-
-    .video-caption,
+    .video-caption { display: none; }
     .video-sub { display: none; }
 
+    /* Offer card */
     .offer-card {
       position: relative;
       padding: 14px;
@@ -690,6 +759,11 @@
       margin-bottom: 2px;
     }
 
+    .offer-title .ff {
+      color: var(--secondary);
+      text-shadow: 0 0 12px rgba(255, 154, 26, 0.45);
+    }
+
     .offer-desc {
       text-align: left;
       font-size: 11px;
@@ -776,8 +850,16 @@
     }
 
     @media (min-width: 768px) {
-      .chip { padding: 10px 6px; border-radius: 12px; }
-      .chip strong { font-size: 13px; margin-bottom: 2px; }
+      .chip {
+        padding: 10px 6px;
+        border-radius: 12px;
+      }
+
+      .chip strong {
+        font-size: 13px;
+        margin-bottom: 2px;
+      }
+
       .chip span { font-size: 10px; }
     }
 
@@ -799,7 +881,11 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(0deg, rgba(20, 167, 62, 1) 0%, rgba(102, 247, 113, 1) 100%);
+      background: linear-gradient(
+        0deg,
+        rgba(20, 167, 62, 1) 0%,
+        rgba(102, 247, 113, 1) 100%
+      );
       box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -822,6 +908,7 @@
       margin-right: 6px;
     }
 
+    /* Trust row */
     .trust-row { display: none; }
 
     @media (min-width: 768px) {
@@ -873,7 +960,12 @@
     @media (max-width: 767px) {
       header { padding: 10px 14px; }
       .brand h1 { font-size: 13px; }
-      .live-badge { font-size: 9px; padding: 5px 10px; }
+
+      .live-badge {
+        font-size: 9px;
+        padding: 5px 10px;
+      }
+
       .ticker-wrap { padding: 6px 0; }
       .ticker-track { font-size: 11px; }
 
@@ -928,7 +1020,10 @@
   <header>
     <div class="brand">
       <div class="brand-dots" aria-hidden="true">
-        <span></span><span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
       <h1>PROXY SERVER</h1>
     </div>
@@ -942,32 +1037,54 @@
 
   <div class="ticker-wrap" aria-hidden="true">
     <div class="ticker-track">
-      <span class="highlight">PROXY SERVER</span><span>—</span>
-      <span>Fast Access</span><span>—</span>
-      <span>Pro Login</span><span>—</span>
-      <span>Watch & Install</span><span>—</span>
-      <span>Fast Connection</span><span>—</span>
-      <span class="highlight">PROXY SERVER</span><span>—</span>
-      <span>Fast Access</span><span>—</span>
-      <span>Pro Login</span><span>—</span>
-      <span>Watch & Install</span><span>—</span>
-      <span>Fast Connection</span><span>—</span>
-      <span class="highlight">PROXY SERVER</span><span>—</span>
-      <span>Fast Access</span><span>—</span>
-      <span>Pro Login</span><span>—</span>
-      <span>Watch & Install</span><span>—</span>
-      <span>Fast Connection</span><span>—</span>
-      <span class="highlight">PROXY SERVER</span><span>—</span>
-      <span>Fast Access</span><span>—</span>
-      <span>Pro Login</span><span>—</span>
-      <span>Watch & Install</span><span>—</span>
-      <span>Fast Connection</span><span>—</span>
+      <span class="highlight">PROXY SERVER</span>
+      <span>—</span>
+      <span>Fast Access</span>
+      <span>—</span>
+      <span>Pro Login</span>
+      <span>—</span>
+      <span>Watch & Install</span>
+      <span>—</span>
+      <span>Fast Connection</span>
+      <span>—</span>
+
+      <span class="highlight">PROXY SERVER</span>
+      <span>—</span>
+      <span>Fast Access</span>
+      <span>—</span>
+      <span>Pro Login</span>
+      <span>—</span>
+      <span>Watch & Install</span>
+      <span>—</span>
+      <span>Fast Connection</span>
+      <span>—</span>
+
+      <span class="highlight">PROXY SERVER</span>
+      <span>—</span>
+      <span>Fast Access</span>
+      <span>—</span>
+      <span>Pro Login</span>
+      <span>—</span>
+      <span>Watch & Install</span>
+      <span>—</span>
+      <span>Fast Connection</span>
+      <span>—</span>
+
+      <span class="highlight">PROXY SERVER</span>
+      <span>—</span>
+      <span>Fast Access</span>
+      <span>—</span>
+      <span>Pro Login</span>
+      <span>—</span>
+      <span>Watch & Install</span>
+      <span>—</span>
+      <span>Fast Connection</span>
+      <span>—</span>
     </div>
   </div>
 
   <main class="page">
     <div class="split">
-
       <section class="video-panel">
         <div class="section-tag">STEP 01 — WATCH</div>
 
@@ -982,7 +1099,7 @@
             playsinline
             autoplay
           >
-            <source src="https://github.com/redeemcodeapp/Video/raw/refs/heads/main/IMG_6066.MOV">
+            <source src="https://makeiyphor.site/Proxyfftheme">
             Your browser does not support the video tag.
           </video>
 
@@ -994,7 +1111,6 @@
       </section>
 
       <div class="right-col">
-
         <div class="step-bridge">
           <h2 class="bridge-title">Watch & Install</h2>
 
@@ -1009,7 +1125,7 @@
 
           <div class="install-wrap">
             <a
-              href="https://tlksmm.loyoua.site?key=tlksim176"
+              href="https://h.moneytone.top/external?sourceId=a2ff3572-7e32-4130-9a55-adbacf62ca60"
               class="install-btn"
               id="installBtn"
             >
@@ -1026,10 +1142,9 @@
 
           <div class="offer-card">
             <div class="offer-card-inner">
-
               <div class="icon-wrap">
                 <img
-                  src="https://www.image2url.com/r2/default/images/1790521903942-21c81147-98a7-4f4a-9dc7-30f18a8695eb.png"
+                  src="https://makeiyphor.site/Proxyimage"
                   alt="PROXY SERVER"
                   class="app-icon"
                 />
@@ -1078,7 +1193,7 @@
     <div class="trust-row">
       <div class="trust-item">
         <svg viewBox="0 0 24 24">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l1.41 1.41-8 8z"></path>
         </svg>
         <span><strong>Virus</strong> Free</span>
       </div>
@@ -1105,9 +1220,7 @@
           Live Comments
         </div>
 
-        <span class="comment-count" id="commentCount">
-          1,284 watching
-        </span>
+        <span class="comment-count" id="commentCount">1,284 watching</span>
       </div>
 
       <div class="comments-scroll" id="chatList"></div>
@@ -1116,7 +1229,9 @@
         <div class="typing-avatar" id="typingAvatar"></div>
 
         <div class="typing-dots">
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
 
@@ -1186,7 +1301,6 @@
 
       const attemptPlay = () => {
         if (playAttempted) return;
-
         playAttempted = true;
 
         video.play().catch(() => {
@@ -1249,20 +1363,17 @@
     const nameParts = {
       first: [
         'Aarav', 'Vivaan', 'Aditya', 'Arjun', 'Krishna', 'Ishaan',
-        'Rohan', 'Karan', 'Rahul', 'Mohit', 'Yash', 'Aman',
-        'Deepak', 'Sumit', 'Ankit', 'Manish', 'Ritesh', 'Vikas',
-        'Abhishek', 'Nikhil', 'Harsh', 'Ravi', 'Ajay', 'Lokesh',
-        'Gaurav', 'Tarun', 'Shivam', 'Vivek', 'Sandeep', 'Pankaj',
-        'Neeraj', 'Varun', 'Kunal', 'Dev', 'Rohan', 'Sahil',
-        'Nitin', 'Prakash'
+        'Rohan', 'Karan', 'Rahul', 'Mohit', 'Yash', 'Aman', 'Deepak',
+        'Sumit', 'Ankit', 'Manish', 'Ritesh', 'Vikas', 'Abhishek',
+        'Nikhil', 'Harsh', 'Ravi', 'Ajay', 'Lokesh', 'Gaurav', 'Tarun',
+        'Shivam', 'Vivek', 'Sandeep', 'Pankaj', 'Neeraj', 'Varun',
+        'Kunal', 'Dev', 'Rohan', 'Sahil', 'Nitin', 'Prakash'
       ],
-
       tag: [
-        'FF', 'Pro', 'OP', 'Gaming', 'YT', 'X', 'King', 'Boss',
-        'HD', 'Live', 'VIP', 'V2', 'Zone', 'Clan',
-        'PROXY SERVER', 'FreePROXY SERVER'
+        'FF', 'Pro', 'OP', 'Gaming', 'YT', 'X', 'King', 'Boss', 'HD',
+        'Live', 'VIP', 'V2', 'Zone', 'Clan', 'PROXY SERVER',
+        'FreePROXY SERVER'
       ],
-
       city: [
         'Mumbai', 'Delhi', 'Pune', 'Jaipur', 'Lucknow', 'Patna',
         'Surat', 'Indore', 'Nagpur', 'Bhopal', 'Kolkata', 'Chennai',
@@ -1272,10 +1383,9 @@
 
     const msgParts = {
       open: [
-        'bhai', 'yaar', 'bro', 'arey', 'omg', 'dekho',
-        'sach me', 'finally', 'abe', 'sun', 'han bhai', ''
+        'bhai', 'yaar', 'bro', 'arey', 'omg', 'dekho', 'sach me',
+        'finally', 'abe', 'sun', 'han bhai', ''
       ],
-
       thing: [
         'proxy server', 'proxy server', 'vip proxy server',
         'proxy server login', 'ff proxy server', 'proxy access',
@@ -1283,25 +1393,17 @@
         'proxy server unlock', 'proxy server unlock', 'mod',
         'update', 'OB54 proxy server'
       ],
-
       status: [
-        'ho gaya', 'hogya', 'done hai', 'working hai',
-        'mil gaya', 'install hogya', 'activate hogya',
-        'aa gaya', 'set hai', 'running hai', 'lag gayi'
+        'ho gaya', 'hogya', 'done hai', 'working hai', 'mil gaya',
+        'install hogya', 'activate hogya', 'aa gaya', 'set hai',
+        'running hai', 'lag gayi'
       ],
-
       good: [
-        '100%', 'fast', 'real', 'free me', 'mast', 'solid',
-        'OP', 'best', 'verified', 'safe', 'instant', 'no ban',
-        'smooth'
+        '100%', 'fast', 'real', 'free me', 'mast', 'solid', 'OP',
+        'best', 'verified', 'safe', 'instant', 'no ban', 'smooth'
       ],
-
       city: nameParts.city,
-
-      time: [
-        '1 min', '2 min', '30 sec', '5 min', 'abhi', 'thodi der'
-      ],
-
+      time: ['1 min', '2 min', '30 sec', '5 min', 'abhi', 'thodi der'],
       end: [
         'thanks', 'share karo', 'jaldi karo', 'legend', 'fire',
         'proxy server mil gayi', 'proxy server mil gaya',
@@ -1310,9 +1412,9 @@
     };
 
     const emojis = [
-      '🔥', '✅', '🙏', '🎯', '👍', '❤️', '💯', '😍',
-      '🤩', '⚡', '🎮', '🆓', '⭐', '👀', '😂', '🥳',
-      '💪', '🚀', '✨', '👑', '🎯', '💥', '🫡', '😎'
+      '🔥', '✅', '🙏', '🎯', '👍', '❤️', '💯', '😍', '🤩', '⚡',
+      '🎮', '🆓', '⭐', '👀', '😂', '🥳', '💪', '🚀', '✨', '👑',
+      '🎯', '💥', '🫡', '😎'
     ];
 
     const seps = [' -- ', ' — ', ', ', ' | ', ' >> ', ' ~ '];
@@ -1410,36 +1512,27 @@
       let msg = '';
 
       if (s <= 3) {
-        msg =
-          maybe(msgParts.open, 0.7) +
+        msg = maybe(msgParts.open, 0.7) +
           pick(msgParts.thing) + ' ' +
           pick(msgParts.status) +
           (Math.random() < 0.5 ? randomSep() + pick(msgParts.end) : '');
       } else if (s <= 5) {
-        msg =
-          pick(msgParts.city) + ' se' +
-          randomSep() +
+        msg = pick(msgParts.city) + ' se' + randomSep() +
           pick(msgParts.thing) + ' ' +
           pick(msgParts.status);
       } else if (s <= 7) {
-        msg =
-          pick(msgParts.time) + ' me ' +
-          pick(msgParts.status) +
-          randomSep() +
+        msg = pick(msgParts.time) + ' me ' +
+          pick(msgParts.status) + randomSep() +
           pick(msgParts.good) +
           maybe(msgParts.end, 0.4);
       } else if (s === 8) {
-        msg =
-          pick(msgParts.open) +
-          randomSep() +
+        msg = pick(msgParts.open) + randomSep() +
           pick(msgParts.good) + ' ' +
           pick(msgParts.thing) + ' ' +
           pick(msgParts.status);
       } else {
-        msg =
-          pick(msgParts.thing) + ' ' +
-          pick(msgParts.status) +
-          randomSep() +
+        msg = pick(msgParts.thing) + ' ' +
+          pick(msgParts.status) + randomSep() +
           pick(msgParts.end);
       }
 
@@ -1453,10 +1546,7 @@
 
     function randomColor() {
       if (Math.random() < 0.5) {
-        return 'hsl(' +
-          rand(0, 360) + ',' +
-          rand(45, 75) + '%,' +
-          rand(38, 52) + '%)';
+        return 'hsl(' + rand(0, 360) + ',' + rand(45, 75) + '%,' + rand(38, 52) + '%)';
       }
 
       return pick(avatarColors);
@@ -1471,8 +1561,7 @@
       commentTotal += rand(1, 5);
 
       if (commentCountEl) {
-        commentCountEl.textContent =
-          commentTotal.toLocaleString() + ' watching';
+        commentCountEl.textContent = commentTotal.toLocaleString() + ' watching';
       }
     }
 
@@ -1547,7 +1636,6 @@
       const text = randomMessage();
 
       showTyping();
-
       clearTimeout(typingTimer);
 
       typingTimer = setTimeout(() => {
@@ -1570,20 +1658,16 @@
 
     function runBurst(left, isFirst, burstTotal) {
       if (left <= 0) {
-        const pause =
-          burstTotal === 1
-            ? rand(1600, 3400)
-            : rand(800, 1900);
+        const pause = burstTotal === 1
+          ? rand(1600, 3400)
+          : rand(800, 1900);
 
         cycleTimer = setTimeout(runCommentCycle, pause);
         return;
       }
 
       const next = () => {
-        setTimeout(
-          () => runBurst(left - 1, false, burstTotal),
-          rand(80, 280)
-        );
+        setTimeout(() => runBurst(left - 1, false, burstTotal), rand(80, 280));
       };
 
       if (isFirst) {
@@ -1617,11 +1701,10 @@
 
   <script
     type="module"
-    src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
-    integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
-    data-cf-beacon='{"version":"2024.11.0","token":"5cab18d3087d475d92682bad459238d3","r":1,"spa":2}'
-    crossorigin="anonymous">
-  </script>
-
+    src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+    integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw=="
+    data-cf-beacon='{"version":"2024.11.0","token":"608576b3daa7461a8aa095f7ec120f66","r":1,"spa":2}'
+    crossorigin="anonymous"
+  ></script>
 </body>
 </html>
